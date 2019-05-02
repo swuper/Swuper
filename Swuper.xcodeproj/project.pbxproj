@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990972C3227AB0D000DAA3D6 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C2227AB0D000DAA3D6 /* HomeView.storyboard */; };
+		990972C5227AB2DB00DAA3D6 /* LikeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */; };
+		990972C7227AB4BC00DAA3D6 /* MoreView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C6227AB4BC00DAA3D6 /* MoreView.storyboard */; };
+		990972CC227AC0F700DAA3D6 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972CB227AC0F700DAA3D6 /* CategoryCollectionViewController.swift */; };
+		990972CE227AC11B00DAA3D6 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972CD227AC11B00DAA3D6 /* ProductListTableViewController.swift */; };
+		990972D0227AC13B00DAA3D6 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972CF227AC13B00DAA3D6 /* ProductDetailViewController.swift */; };
+		990972D4227AC1AB00DAA3D6 /* LikeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972D3227AC1AB00DAA3D6 /* LikeListTableViewController.swift */; };
+		990972D6227AC1F800DAA3D6 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972D5227AC1F800DAA3D6 /* MyPageViewController.swift */; };
+		990972D8227AC2B200DAA3D6 /* RegisterProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972D7227AC2B200DAA3D6 /* RegisterProductViewController.swift */; };
+		990A89672276BB93002BD498 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A89662276BB93002BD498 /* SignUpViewController.swift */; };
 		9993C2BE225DB41100A6B851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BD225DB41100A6B851 /* AppDelegate.swift */; };
-		9993C2C0225DB41100A6B851 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BF225DB41100A6B851 /* ViewController.swift */; };
+		9993C2C0225DB41100A6B851 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BF225DB41100A6B851 /* LoginViewController.swift */; };
 		9993C2C3225DB41200A6B851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C1225DB41200A6B851 /* Main.storyboard */; };
 		9993C2C6225DB41200A6B851 /* Swuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2C4225DB41200A6B851 /* Swuper.xcdatamodeld */; };
 		9993C2C8225DB41400A6B851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C7225DB41400A6B851 /* Assets.xcassets */; };
@@ -16,9 +26,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		990972C2227AB0D000DAA3D6 /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
+		990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeView.storyboard; sourceTree = "<group>"; };
+		990972C6227AB4BC00DAA3D6 /* MoreView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreView.storyboard; sourceTree = "<group>"; };
+		990972CB227AC0F700DAA3D6 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		990972CD227AC11B00DAA3D6 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
+		990972CF227AC13B00DAA3D6 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		990972D3227AC1AB00DAA3D6 /* LikeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableViewController.swift; sourceTree = "<group>"; };
+		990972D5227AC1F800DAA3D6 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		990972D7227AC2B200DAA3D6 /* RegisterProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProductViewController.swift; sourceTree = "<group>"; };
+		990A89662276BB93002BD498 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9993C2BA225DB41100A6B851 /* Swuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9993C2BD225DB41100A6B851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9993C2BF225DB41100A6B851 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9993C2BF225DB41100A6B851 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9993C2C2225DB41200A6B851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9993C2C5225DB41200A6B851 /* Swuper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swuper.xcdatamodel; sourceTree = "<group>"; };
 		9993C2C7225DB41400A6B851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +57,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9907B5C92276C46D00FF12AF /* Login&SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				9993C2BF225DB41100A6B851 /* LoginViewController.swift */,
+				990A89662276BB93002BD498 /* SignUpViewController.swift */,
+			);
+			path = "Login&SignUp";
+			sourceTree = "<group>";
+		};
+		990972C8227AC04600DAA3D6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				990972C2227AB0D000DAA3D6 /* HomeView.storyboard */,
+				990972CB227AC0F700DAA3D6 /* CategoryCollectionViewController.swift */,
+				990972CD227AC11B00DAA3D6 /* ProductListTableViewController.swift */,
+				990972CF227AC13B00DAA3D6 /* ProductDetailViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		990972C9227AC06600DAA3D6 /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */,
+				990972D3227AC1AB00DAA3D6 /* LikeListTableViewController.swift */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
+		990972CA227AC08500DAA3D6 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				990972C6227AB4BC00DAA3D6 /* MoreView.storyboard */,
+				990972D5227AC1F800DAA3D6 /* MyPageViewController.swift */,
+				990972D7227AC2B200DAA3D6 /* RegisterProductViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		9993C2B1225DB41100A6B851 = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				9993C2BD225DB41100A6B851 /* AppDelegate.swift */,
-				9993C2BF225DB41100A6B851 /* ViewController.swift */,
+				9907B5C92276C46D00FF12AF /* Login&SignUp */,
+				990972C8227AC04600DAA3D6 /* Home */,
+				990972C9227AC06600DAA3D6 /* Like */,
+				990972CA227AC08500DAA3D6 /* More */,
 				9993C2C1225DB41200A6B851 /* Main.storyboard */,
 				9993C2C7225DB41400A6B851 /* Assets.xcassets */,
 				9993C2C9225DB41400A6B851 /* LaunchScreen.storyboard */,
@@ -126,7 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9993C2CB225DB41400A6B851 /* LaunchScreen.storyboard in Resources */,
+				990972C5227AB2DB00DAA3D6 /* LikeView.storyboard in Resources */,
+				990972C7227AB4BC00DAA3D6 /* MoreView.storyboard in Resources */,
 				9993C2C8225DB41400A6B851 /* Assets.xcassets in Resources */,
+				990972C3227AB0D000DAA3D6 /* HomeView.storyboard in Resources */,
 				9993C2C3225DB41200A6B851 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +203,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9993C2C0225DB41100A6B851 /* ViewController.swift in Sources */,
+				990972CC227AC0F700DAA3D6 /* CategoryCollectionViewController.swift in Sources */,
+				990972D6227AC1F800DAA3D6 /* MyPageViewController.swift in Sources */,
+				9993C2C0225DB41100A6B851 /* LoginViewController.swift in Sources */,
+				990972D0227AC13B00DAA3D6 /* ProductDetailViewController.swift in Sources */,
 				9993C2BE225DB41100A6B851 /* AppDelegate.swift in Sources */,
+				990972D4227AC1AB00DAA3D6 /* LikeListTableViewController.swift in Sources */,
+				990A89672276BB93002BD498 /* SignUpViewController.swift in Sources */,
 				9993C2C6225DB41200A6B851 /* Swuper.xcdatamodeld in Sources */,
+				990972CE227AC11B00DAA3D6 /* ProductListTableViewController.swift in Sources */,
+				990972D8227AC2B200DAA3D6 /* RegisterProductViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
