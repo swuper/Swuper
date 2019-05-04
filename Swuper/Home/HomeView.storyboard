@@ -13,7 +13,6 @@
         <!--Category Collection View Controller-->
         <scene sceneID="s5o-zH-EjO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AEC-C8-08X" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Ac6-O4-vQA" customClass="CategoryCollectionViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pcb-lv-hVJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -70,13 +69,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="IRY-CY-1sa"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEC-C8-08X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2783.1999999999998" y="107.49625187406298"/>
         </scene>
         <!--Product List Table View Controller-->
         <scene sceneID="K7I-XY-aGR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ip-vD-8wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="m8V-Q4-kVb" customClass="ProductListTableViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lot-ca-2yv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -111,6 +110,7 @@
                         <viewLayoutGuide key="safeArea" id="R0K-va-a3E"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ip-vD-8wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3631.1999999999998" y="106.59670164917542"/>
         </scene>
@@ -275,7 +275,6 @@
         <!--Home-->
         <scene sceneID="yKK-0x-bwp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ftu-qW-H5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="HoneVIewController" automaticallyAdjustsScrollViewInsets="NO" id="467-z6-ctS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="o7v-Ap-eOp"/>
                     <toolbarItems/>
@@ -288,6 +287,7 @@
                         <segue destination="Ac6-O4-vQA" kind="relationship" relationship="rootViewController" id="8GT-lM-zKs"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftu-qW-H5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="107.49625187406298"/>
         </scene>
