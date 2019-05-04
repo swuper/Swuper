@@ -18,15 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwW-Cp-Wha">
-                                <rect key="frame" x="0.0" y="88" width="414" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SFd-YD-rkN">
-                                <rect key="frame" x="0.0" y="117" width="414" height="745"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="699"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yt5-IN-f7w">
                                     <size key="itemSize" width="167" height="168"/>
@@ -61,24 +54,40 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwW-Cp-Wha">
+                                <rect key="frame" x="0.0" y="108" width="414" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2EZ-ie-Hz7"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="상품"/>
+                                    <segment title="클래스"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categorySegmentValueChanged:" destination="Ac6-O4-vQA" eventType="valueChanged" id="4LK-gC-hs5"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Y2o-2L-Krp" firstAttribute="bottom" secondItem="SFd-YD-rkN" secondAttribute="bottom" id="7vI-1k-20p"/>
-                            <constraint firstItem="SFd-YD-rkN" firstAttribute="top" secondItem="Y2o-2L-Krp" secondAttribute="top" constant="29" id="I01-3b-jrf"/>
-                            <constraint firstItem="iwW-Cp-Wha" firstAttribute="leading" secondItem="Y2o-2L-Krp" secondAttribute="leading" id="OOd-Hu-q9i"/>
-                            <constraint firstItem="SFd-YD-rkN" firstAttribute="trailing" secondItem="Y2o-2L-Krp" secondAttribute="trailing" id="TlT-Vn-B8o"/>
-                            <constraint firstItem="SFd-YD-rkN" firstAttribute="leading" secondItem="Y2o-2L-Krp" secondAttribute="leading" id="qra-Yh-OQg"/>
-                            <constraint firstItem="SFd-YD-rkN" firstAttribute="top" secondItem="iwW-Cp-Wha" secondAttribute="bottom" constant="1" id="qzC-6e-Xcm"/>
-                            <constraint firstItem="iwW-Cp-Wha" firstAttribute="trailing" secondItem="Y2o-2L-Krp" secondAttribute="trailing" id="ruk-5e-UAI"/>
+                            <constraint firstItem="SFd-YD-rkN" firstAttribute="trailing" secondItem="Y2o-2L-Krp" secondAttribute="trailing" id="B5s-4u-wW7"/>
+                            <constraint firstItem="SFd-YD-rkN" firstAttribute="top" secondItem="iwW-Cp-Wha" secondAttribute="bottom" constant="20" id="Jm8-Hy-7ls"/>
+                            <constraint firstItem="iwW-Cp-Wha" firstAttribute="trailing" secondItem="Y2o-2L-Krp" secondAttribute="trailing" id="QX6-2J-5A4"/>
+                            <constraint firstItem="SFd-YD-rkN" firstAttribute="bottom" secondItem="Y2o-2L-Krp" secondAttribute="bottom" id="a5t-3R-5ac"/>
+                            <constraint firstItem="iwW-Cp-Wha" firstAttribute="top" secondItem="Y2o-2L-Krp" secondAttribute="top" constant="20" id="rtr-DW-F8T"/>
+                            <constraint firstItem="iwW-Cp-Wha" firstAttribute="leading" secondItem="Y2o-2L-Krp" secondAttribute="leading" id="s3e-NI-KfZ"/>
+                            <constraint firstItem="SFd-YD-rkN" firstAttribute="leading" secondItem="Y2o-2L-Krp" secondAttribute="leading" id="wWx-Gb-DNz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y2o-2L-Krp"/>
                     </view>
                     <navigationItem key="navigationItem" id="IRY-CY-1sa"/>
+                    <connections>
+                        <outlet property="categorySegment" destination="iwW-Cp-Wha" id="o9j-5U-pIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEC-C8-08X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783.1999999999998" y="107.49625187406298"/>
+            <point key="canvasLocation" x="2782.608695652174" y="107.14285714285714"/>
         </scene>
         <!--Product List Table View Controller-->
         <scene sceneID="K7I-XY-aGR">
