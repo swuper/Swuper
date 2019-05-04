@@ -10,17 +10,20 @@ import UIKit
 
 class CategoryCollectionViewController: UIViewController {
 
+    // IBOulet
     @IBOutlet var categorySegment: UISegmentedControl!
     
+    // Properties
     let buttonBar = UIView()
     
+    // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         customSegment()
         // Do any additional setup after loading the view.
     }
     
-
+    // Function
     func customSegment() {
         categorySegment.backgroundColor = .clear
         categorySegment.tintColor = .clear
@@ -41,6 +44,7 @@ class CategoryCollectionViewController: UIViewController {
         buttonBar.widthAnchor.constraint(equalTo: categorySegment.widthAnchor, multiplier: 1 / CGFloat(categorySegment.numberOfSegments)).isActive = true
     }
     
+    // IBAction
     @IBAction func categorySegmentValueChanged(_ sender: UISegmentedControl) {
         UIView.animate(withDuration: 0.3) {
             self.buttonBar.frame.origin.x = (self.categorySegment.frame.width / CGFloat(self.categorySegment.numberOfSegments)) * CGFloat(self.categorySegment.selectedSegmentIndex)
@@ -55,5 +59,4 @@ class CategoryCollectionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

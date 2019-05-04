@@ -10,14 +10,17 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    // IBOulet
     @IBOutlet var EmailAdressTextField: UITextField!
     @IBOutlet var IDTextField: UITextField!
     @IBOutlet var PasswordField: UITextField!
     @IBOutlet var ConfirmPasswordTextField: UITextField!
     @IBOutlet var selectedImageView: UIImageView!
     
+    // Properties
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
+    // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +39,8 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //IBAction
     @IBAction func TapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -59,8 +64,6 @@ class SignUpViewController: UIViewController {
             alertController.addAction(okAction)
             present(alertController, animated: false, completion: nil)
         }
-        
-        
         if (PasswordField.text == ConfirmPasswordTextField.text) {
             // 인코딩
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -92,6 +95,13 @@ class SignUpViewController: UIViewController {
     
 }
 
+// delegate
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
 extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -108,3 +118,5 @@ extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationCont
         picker.dismiss(animated: true, completion: nil)
     }
 }
+
+
