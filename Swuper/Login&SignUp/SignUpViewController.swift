@@ -65,24 +65,20 @@ class SignUpViewController: UIViewController {
             // 인코딩
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             activityIndicator.startAnimating()
-            print("인코딩")
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
-//            var emailAdress: String?
-//            var password: String?
-//            var name: String?
-            let content = LoginEncodingModel(emailAdress: self.EmailAdressTextField.text, password: self.PasswordField.text, name: self.IDTextField.text)
-            let jsonData = try? encoder.encode(content)
-            if let jsonData = jsonData, let jsonString = String(data: jsonData, encoding: .utf8) {
-                print(jsonString)
-//                {
-//                    "emailAdress" : "aaa",
-//                    "name" : "vvv",
-//                    "password" : "ccc"
-//                }
-                postAction(emailAdress: EmailAdressTextField.text ?? "", name: IDTextField.text ?? "", password: PasswordField.text ?? "")
-
-            }
+//            let encoder = JSONEncoder()
+//            encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
+//            let content = LoginEncodingModel(emailAdress: self.EmailAdressTextField.text, password: self.PasswordField.text, name: self.IDTextField.text)
+//            let jsonData = try? encoder.encode(content)
+//            if let jsonData = jsonData, let jsonString = String(data: jsonData, encoding: .utf8) {
+//                print(jsonString)
+////                {
+////                    "emailAdress" : "aaa",
+////                    "name" : "vvv",
+////                    "password" : "ccc"
+////                }
+//            }
+            guard let img = UIImage(named: "user") else { return }
+            post(emailAdress: EmailAdressTextField.text ?? "", name: IDTextField.text ?? "", password: PasswordField.text ?? "", image: selectedImageView.image ?? img)
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             activityIndicator.stopAnimating()
         } else {
