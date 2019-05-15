@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06AE92AC18A21D961358D4F1 /* Pods_Swuper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C652F601801446A25F2D55C /* Pods_Swuper.framework */; };
 		990972C3227AB0D000DAA3D6 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C2227AB0D000DAA3D6 /* HomeView.storyboard */; };
 		990972C5227AB2DB00DAA3D6 /* LikeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */; };
 		990972C7227AB4BC00DAA3D6 /* MoreView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C6227AB4BC00DAA3D6 /* MoreView.storyboard */; };
@@ -16,9 +15,9 @@
 		990972D0227AC13B00DAA3D6 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972CF227AC13B00DAA3D6 /* ProductDetailViewController.swift */; };
 		990972D4227AC1AB00DAA3D6 /* LikeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972D3227AC1AB00DAA3D6 /* LikeListTableViewController.swift */; };
 		990972D6227AC1F800DAA3D6 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972D5227AC1F800DAA3D6 /* MyPageViewController.swift */; };
-		990972D8227AC2B200DAA3D6 /* RegisterProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972D7227AC2B200DAA3D6 /* RegisterProductViewController.swift */; };
 		990972DA227AC4DA00DAA3D6 /* LoginEncodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972D9227AC4DA00DAA3D6 /* LoginEncodingModel.swift */; };
 		990972DD227AD5C700DAA3D6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990972DC227AD5C700DAA3D6 /* Request.swift */; };
+		9909E7FC227E9D3500219758 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9909E7FB227E9D3500219758 /* CategoryCollectionViewCell.swift */; };
 		990A89672276BB93002BD498 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A89662276BB93002BD498 /* SignUpViewController.swift */; };
 		9993C2BE225DB41100A6B851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BD225DB41100A6B851 /* AppDelegate.swift */; };
 		9993C2C0225DB41100A6B851 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BF225DB41100A6B851 /* LoginViewController.swift */; };
@@ -26,10 +25,13 @@
 		9993C2C6225DB41200A6B851 /* Swuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2C4225DB41200A6B851 /* Swuper.xcdatamodeld */; };
 		9993C2C8225DB41400A6B851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C7225DB41400A6B851 /* Assets.xcassets */; };
 		9993C2CB225DB41400A6B851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C9225DB41400A6B851 /* LaunchScreen.storyboard */; };
+		EFD4BCE79AAF2777E86800B7 /* Pods_Swuper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9518FD74A252EEBC78D2EE6F /* Pods_Swuper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C652F601801446A25F2D55C /* Pods_Swuper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swuper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		536AEF1A90227FB3F75065EA /* Pods-Swuper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.debug.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.debug.xcconfig"; sourceTree = "<group>"; };
+		72EA65CC42926C7D01E15013 /* Pods-Swuper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.release.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.release.xcconfig"; sourceTree = "<group>"; };
+		9518FD74A252EEBC78D2EE6F /* Pods_Swuper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swuper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990972C2227AB0D000DAA3D6 /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeView.storyboard; sourceTree = "<group>"; };
 		990972C6227AB4BC00DAA3D6 /* MoreView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreView.storyboard; sourceTree = "<group>"; };
@@ -38,9 +40,9 @@
 		990972CF227AC13B00DAA3D6 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		990972D3227AC1AB00DAA3D6 /* LikeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableViewController.swift; sourceTree = "<group>"; };
 		990972D5227AC1F800DAA3D6 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		990972D7227AC2B200DAA3D6 /* RegisterProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProductViewController.swift; sourceTree = "<group>"; };
 		990972D9227AC4DA00DAA3D6 /* LoginEncodingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEncodingModel.swift; sourceTree = "<group>"; };
 		990972DC227AD5C700DAA3D6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		9909E7FB227E9D3500219758 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		990A89662276BB93002BD498 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9993C2BA225DB41100A6B851 /* Swuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9993C2BD225DB41100A6B851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		9993C2C7225DB41400A6B851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9993C2CA225DB41400A6B851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9993C2CC225DB41400A6B851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C47DF442A76E1B0ADB036DF3 /* Pods-Swuper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.debug.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.debug.xcconfig"; sourceTree = "<group>"; };
-		C7C92FA0BAFE995CE722343C /* Pods-Swuper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.release.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06AE92AC18A21D961358D4F1 /* Pods_Swuper.framework in Frameworks */,
+				EFD4BCE79AAF2777E86800B7 /* Pods_Swuper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,19 +69,10 @@
 		08BF77AAB3D05924A6BBFDC7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C47DF442A76E1B0ADB036DF3 /* Pods-Swuper.debug.xcconfig */,
-				C7C92FA0BAFE995CE722343C /* Pods-Swuper.release.xcconfig */,
+				536AEF1A90227FB3F75065EA /* Pods-Swuper.debug.xcconfig */,
+				72EA65CC42926C7D01E15013 /* Pods-Swuper.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		3AF68CDBD5C3FD6CE3D4EB68 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0C652F601801446A25F2D55C /* Pods_Swuper.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9907B5C92276C46D00FF12AF /* Login&SignUp */ = {
@@ -100,6 +91,7 @@
 				990972CB227AC0F700DAA3D6 /* CategoryCollectionViewController.swift */,
 				990972CD227AC11B00DAA3D6 /* ProductListTableViewController.swift */,
 				990972CF227AC13B00DAA3D6 /* ProductDetailViewController.swift */,
+				9909E7FA227E9D0300219758 /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -118,7 +110,6 @@
 			children = (
 				990972C6227AB4BC00DAA3D6 /* MoreView.storyboard */,
 				990972D5227AC1F800DAA3D6 /* MyPageViewController.swift */,
-				990972D7227AC2B200DAA3D6 /* RegisterProductViewController.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -131,13 +122,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9909E7FA227E9D0300219758 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9909E7FB227E9D3500219758 /* CategoryCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		9993C2B1225DB41100A6B851 = {
 			isa = PBXGroup;
 			children = (
 				9993C2BC225DB41100A6B851 /* Swuper */,
 				9993C2BB225DB41100A6B851 /* Products */,
 				08BF77AAB3D05924A6BBFDC7 /* Pods */,
-				3AF68CDBD5C3FD6CE3D4EB68 /* Frameworks */,
+				D9701D16702923A18F4DBD48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +167,14 @@
 			path = Swuper;
 			sourceTree = "<group>";
 		};
+		D9701D16702923A18F4DBD48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9518FD74A252EEBC78D2EE6F /* Pods_Swuper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,11 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9993C2CF225DB41400A6B851 /* Build configuration list for PBXNativeTarget "Swuper" */;
 			buildPhases = (
-				76E07FC9C4E9C65F13A9991D /* [CP] Check Pods Manifest.lock */,
+				0C1C29BA5ECBF04A2F6E3E9A /* [CP] Check Pods Manifest.lock */,
 				9993C2B6225DB41100A6B851 /* Sources */,
 				9993C2B7225DB41100A6B851 /* Frameworks */,
 				9993C2B8225DB41100A6B851 /* Resources */,
-				60E1C1A7A03BEB7747E4501B /* [CP] Embed Pods Frameworks */,
+				FA4EA9A6882F6A4CA0356193 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,29 +247,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		60E1C1A7A03BEB7747E4501B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swuper/Pods-Swuper-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swuper/Pods-Swuper-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		76E07FC9C4E9C65F13A9991D /* [CP] Check Pods Manifest.lock */ = {
+		0C1C29BA5ECBF04A2F6E3E9A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,6 +269,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA4EA9A6882F6A4CA0356193 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swuper/Pods-Swuper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swuper/Pods-Swuper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -297,11 +304,11 @@
 				9993C2C0225DB41100A6B851 /* LoginViewController.swift in Sources */,
 				990972D0227AC13B00DAA3D6 /* ProductDetailViewController.swift in Sources */,
 				9993C2BE225DB41100A6B851 /* AppDelegate.swift in Sources */,
+				9909E7FC227E9D3500219758 /* CategoryCollectionViewCell.swift in Sources */,
 				990972D4227AC1AB00DAA3D6 /* LikeListTableViewController.swift in Sources */,
 				990A89672276BB93002BD498 /* SignUpViewController.swift in Sources */,
 				9993C2C6225DB41200A6B851 /* Swuper.xcdatamodeld in Sources */,
 				990972CE227AC11B00DAA3D6 /* ProductListTableViewController.swift in Sources */,
-				990972D8227AC2B200DAA3D6 /* RegisterProductViewController.swift in Sources */,
 				990972DA227AC4DA00DAA3D6 /* LoginEncodingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,9 +453,10 @@
 		};
 		9993C2D0225DB41400A6B851 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C47DF442A76E1B0ADB036DF3 /* Pods-Swuper.debug.xcconfig */;
+			baseConfigurationReference = 536AEF1A90227FB3F75065EA /* Pods-Swuper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDM6UDD9TX;
 				INFOPLIST_FILE = Swuper/Info.plist;
@@ -458,6 +466,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = swu.ac.kr.Swuper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -465,9 +474,10 @@
 		};
 		9993C2D1225DB41400A6B851 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7C92FA0BAFE995CE722343C /* Pods-Swuper.release.xcconfig */;
+			baseConfigurationReference = 72EA65CC42926C7D01E15013 /* Pods-Swuper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDM6UDD9TX;
 				INFOPLIST_FILE = Swuper/Info.plist;
@@ -477,6 +487,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = swu.ac.kr.Swuper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

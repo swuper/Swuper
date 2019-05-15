@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        selectedImageView.image = UIImage(named: "user")
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.gray
@@ -68,22 +68,12 @@ class SignUpViewController: UIViewController {
             // 인코딩
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             activityIndicator.startAnimating()
-//            let encoder = JSONEncoder()
-//            encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
-//            let content = LoginEncodingModel(emailAdress: self.EmailAdressTextField.text, password: self.PasswordField.text, name: self.IDTextField.text)
-//            let jsonData = try? encoder.encode(content)
-//            if let jsonData = jsonData, let jsonString = String(data: jsonData, encoding: .utf8) {
-//                print(jsonString)
-////                {
-////                    "emailAdress" : "aaa",
-////                    "name" : "vvv",
-////                    "password" : "ccc"
-////                }
-//            }
-            guard let img = UIImage(named: "user") else { return }
-            post(emailAdress: EmailAdressTextField.text ?? "", name: IDTextField.text ?? "", password: PasswordField.text ?? "", image: selectedImageView.image ?? img)
+            guard let img = selectedImageView.image else { return }
+            post(emailAdress: EmailAdressTextField.text ?? "", name: IDTextField.text ?? "", password: PasswordField.text ?? "", image: img)
+
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             activityIndicator.stopAnimating()
+            dismiss(animated: true, completion: nil)
         } else {
             // 비밀번호가 일치하지 않다는 alert 띄우기
             let alertController = UIAlertController(title: "경고", message: "비밀번호가 일치하지 않습니다", preferredStyle: .alert)

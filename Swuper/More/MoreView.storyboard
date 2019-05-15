@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PhL-Nc-yQq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PhL-Nc-yQq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,6 @@
         <!--My Page View Controller-->
         <scene sceneID="nYD-hU-8tp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DAJ-k9-5br" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="oHS-m4-SYI" customClass="MyPageViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RYz-c2-NPi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -51,9 +50,6 @@
                                 <rect key="frame" x="276" y="214" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="상품 등록하기"/>
-                                <connections>
-                                    <segue destination="tBA-JC-Wpu" kind="presentation" id="lQ4-BY-a9j"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8GD-Rf-Ajy">
                                 <rect key="frame" x="154" y="74" width="72" height="68"/>
@@ -79,50 +75,51 @@
                     </view>
                     <navigationItem key="navigationItem" id="MPF-0f-2Cx"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAJ-k9-5br" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2781.5999999999999" y="1512.5937031484259"/>
         </scene>
-        <!--Register Product View Controller-->
-        <scene sceneID="Mrb-SF-Zbb">
+        <!--Page View Controller-->
+        <scene sceneID="5hb-Nd-VEo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VZ2-2F-uOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="tBA-JC-Wpu" customClass="RegisterProductViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mgi-aS-I6k">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="dfz-J8-iNQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FbU-AO-Cow" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3714" y="1513"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TOj-gh-GhX">
+            <objects>
+                <viewController id="hhX-hF-aTo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eWN-Xn-DT2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ni-NS-yt8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="131" id="d4t-Uf-hLd">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="131"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d4t-Uf-hLd" id="Kfw-Z1-0rO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smh-jo-fxX">
-                                <rect key="frame" x="317" y="20" width="42" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="닫기"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="b36-9c-95H"/>
+                        <viewLayoutGuide key="safeArea" id="4hy-HB-AhL"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zrr-5j-QQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3693.5999999999999" y="1512.5937031484259"/>
+            <point key="canvasLocation" x="4794" y="1765"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9UV-ci-mHj">
+            <objects>
+                <viewController id="W2K-W2-8gN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZtS-gP-iP0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="w2Y-jJ-ylB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oK2-z0-iOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4773" y="1042"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iSh-My-ioT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vOG-h0-KRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MoreViewController" automaticallyAdjustsScrollViewInsets="NO" id="PhL-Nc-yQq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="slq-4h-VEo"/>
                     <toolbarItems/>
@@ -135,6 +132,7 @@
                         <segue destination="oHS-m4-SYI" kind="relationship" relationship="rootViewController" id="OP5-wy-QKk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOG-h0-KRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="1514"/>
         </scene>

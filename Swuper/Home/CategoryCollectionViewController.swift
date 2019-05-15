@@ -11,16 +11,27 @@ import UIKit
 class CategoryCollectionViewController: UIViewController {
 
     // IBOulet
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var categorySegment: UISegmentedControl!
     
     // Properties
+    let cell = "CategoryCell"
     let buttonBar = UIView()
+    var categoryImage: [String] = ["earring", "flower", "macaron", "paper", "candle", "ceramic"]
+    var categoryTitle: [String] = ["귀걸이", "꽃", "마카롱", "문구류", "캔들", "도자기"]
     
     // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         customSegment()
-        // Do any additional setup after loading the view.
+        let flowLayout: UICollectionViewFlowLayout
+        flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.init(top: 2, left: 2, bottom: 2, right: 2)
+        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.minimumLineSpacing = 10
+        let halfWidth = UIScreen.main.bounds.width / 2.0 - 10
+        flowLayout.itemSize = CGSize(width: halfWidth, height: halfWidth * 1.2)
+        self.collectionView.collectionViewLayout = flowLayout
     }
     
     // Function
@@ -59,4 +70,16 @@ class CategoryCollectionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension CategoryCollectionViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryImage.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
+        cell.categoryImageView.image = UIImage(named: categoryImage[indexPath.item])
+        return cell
+    }
 }
