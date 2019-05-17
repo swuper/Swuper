@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PhL-Nc-yQq">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="oHS-m4-SYI" customClass="MyPageViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RYz-c2-NPi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KQC-vs-Haw">
@@ -50,6 +50,9 @@
                                 <rect key="frame" x="276" y="214" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="상품 등록하기"/>
+                                <connections>
+                                    <segue destination="dfz-J8-iNQ" kind="presentation" id="dvg-6T-vsS"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8GD-Rf-Ajy">
                                 <rect key="frame" x="154" y="74" width="72" height="68"/>
@@ -79,43 +82,198 @@
             </objects>
             <point key="canvasLocation" x="2781.5999999999999" y="1512.5937031484259"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Register Page View Controller-->
         <scene sceneID="5hb-Nd-VEo">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="dfz-J8-iNQ" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="dfz-J8-iNQ" customClass="RegisterPageViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FbU-AO-Cow" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3714" y="1513"/>
         </scene>
-        <!--View Controller-->
+        <!--Second Step View Controller-->
         <scene sceneID="TOj-gh-GhX">
             <objects>
-                <viewController id="hhX-hF-aTo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondStepViewController" id="hhX-hF-aTo" customClass="SecondStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWN-Xn-DT2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUS-JZ-3Nt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="상품 / 서비스 등록" id="cLE-qm-UO1">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="u8y-mi-k36">
+                                            <connections>
+                                                <action selector="touchUpCancelButton:" destination="hhX-hF-aTo" id="nh9-W7-r6K"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aUS-JZ-3Nt" firstAttribute="trailing" secondItem="4hy-HB-AhL" secondAttribute="trailing" id="4Yn-qc-pTb"/>
+                            <constraint firstItem="aUS-JZ-3Nt" firstAttribute="top" secondItem="4hy-HB-AhL" secondAttribute="top" id="9dK-4p-1dI"/>
+                            <constraint firstItem="aUS-JZ-3Nt" firstAttribute="leading" secondItem="4hy-HB-AhL" secondAttribute="leading" id="U9c-Oy-kkK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4hy-HB-AhL"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrr-5j-QQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4794" y="1765"/>
+            <point key="canvasLocation" x="4772" y="1764"/>
         </scene>
-        <!--View Controller-->
+        <!--First Step View Controller-->
         <scene sceneID="9UV-ci-mHj">
             <objects>
-                <viewController id="W2K-W2-8gN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstStepViewController" id="W2K-W2-8gN" customClass="FirstStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZtS-gP-iP0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aup-wS-bIM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="상품 / 서비스 등록" id="S3T-DD-4Dl">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="GJu-eC-H1h">
+                                            <connections>
+                                                <action selector="touchUpCancelButton:" destination="W2K-W2-8gN" id="4sh-q3-NJr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step1" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCZ-Uz-z0T">
+                                <rect key="frame" x="47" y="105" width="80.5" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JOM-iU-yc8">
+                                <rect key="frame" x="47" y="224.5" width="320" height="222"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품/클래스명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9G-DW-K9B">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상품/클래스명" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ST8-vH-ZxE">
+                                        <rect key="frame" x="0.0" y="36" width="320" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6G-4b-rcS">
+                                        <rect key="frame" x="0.0" y="78" width="35" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="가격" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkG-zT-WVn">
+                                        <rect key="frame" x="0.0" y="114" width="320" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈카카오톡URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzd-xS-KDt">
+                                        <rect key="frame" x="0.0" y="156" width="141.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오픈카카오톡URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cc4-yH-Jgg">
+                                        <rect key="frame" x="0.0" y="192" width="320" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dkG-zT-WVn" firstAttribute="trailing" secondItem="ST8-vH-ZxE" secondAttribute="trailing" id="B4q-9M-ipl"/>
+                                    <constraint firstItem="cc4-yH-Jgg" firstAttribute="trailing" secondItem="dkG-zT-WVn" secondAttribute="trailing" id="gsc-oH-l7g"/>
+                                    <constraint firstAttribute="trailing" secondItem="ST8-vH-ZxE" secondAttribute="trailing" id="m7h-0d-kwV"/>
+                                </constraints>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상품/클래스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0p-bg-pQR" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="47" y="169.5" width="111" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="카테고리" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bA7-Ob-3d1" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="178" y="169.5" width="189" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="N0p-bg-pQR" firstAttribute="leading" secondItem="w2Y-jJ-ylB" secondAttribute="leading" constant="47" id="4f8-QS-chv"/>
+                            <constraint firstItem="N0p-bg-pQR" firstAttribute="top" secondItem="mCZ-Uz-z0T" secondAttribute="bottom" constant="25" id="5cy-4f-rjt"/>
+                            <constraint firstItem="JOM-iU-yc8" firstAttribute="leading" secondItem="w2Y-jJ-ylB" secondAttribute="leading" constant="47" id="8bS-h3-jpl"/>
+                            <constraint firstItem="w2Y-jJ-ylB" firstAttribute="trailing" secondItem="bA7-Ob-3d1" secondAttribute="trailing" constant="47" id="9Lj-rr-f2E"/>
+                            <constraint firstItem="JOM-iU-yc8" firstAttribute="top" secondItem="bA7-Ob-3d1" secondAttribute="bottom" constant="25" id="Izw-P4-Xpd"/>
+                            <constraint firstItem="w2Y-jJ-ylB" firstAttribute="trailing" secondItem="mCZ-Uz-z0T" secondAttribute="trailing" constant="286.5" id="Kv1-RH-zBM"/>
+                            <constraint firstItem="N0p-bg-pQR" firstAttribute="trailing" secondItem="M9G-DW-K9B" secondAttribute="trailing" id="MRF-hq-1OV"/>
+                            <constraint firstItem="w2Y-jJ-ylB" firstAttribute="trailing" secondItem="JOM-iU-yc8" secondAttribute="trailing" constant="47" id="VkL-Dr-gW6"/>
+                            <constraint firstItem="aup-wS-bIM" firstAttribute="trailing" secondItem="w2Y-jJ-ylB" secondAttribute="trailing" id="ZI9-Xl-qMe"/>
+                            <constraint firstItem="aup-wS-bIM" firstAttribute="top" secondItem="w2Y-jJ-ylB" secondAttribute="top" id="Zk3-0o-gWL"/>
+                            <constraint firstItem="bA7-Ob-3d1" firstAttribute="leading" secondItem="N0p-bg-pQR" secondAttribute="trailing" constant="20" id="ap9-cn-CvN"/>
+                            <constraint firstItem="aup-wS-bIM" firstAttribute="leading" secondItem="w2Y-jJ-ylB" secondAttribute="leading" id="eVq-AY-hdT"/>
+                            <constraint firstItem="JOM-iU-yc8" firstAttribute="top" secondItem="N0p-bg-pQR" secondAttribute="bottom" constant="25" id="nnh-wm-vZd"/>
+                            <constraint firstItem="mCZ-Uz-z0T" firstAttribute="leading" secondItem="w2Y-jJ-ylB" secondAttribute="leading" constant="47" id="tsh-Qu-bC4"/>
+                            <constraint firstItem="mCZ-Uz-z0T" firstAttribute="top" secondItem="aup-wS-bIM" secondAttribute="bottom" constant="17" id="vrL-aK-cgF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="w2Y-jJ-ylB"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryDropDown" destination="bA7-Ob-3d1" id="rZG-3C-3wv"/>
+                        <outlet property="itemClassDropDown" destination="N0p-bg-pQR" id="s0B-Yj-a1i"/>
+                        <outlet property="kakaoTalkURLTextField" destination="cc4-yH-Jgg" id="JUy-4y-Jeb"/>
+                        <outlet property="priceTextField" destination="dkG-zT-WVn" id="sWl-9I-JKS"/>
+                        <outlet property="titleTextField" destination="ST8-vH-ZxE" id="2My-Uq-eTN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oK2-z0-iOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4773" y="1042"/>
+            <point key="canvasLocation" x="4771.0144927536239" y="1040.625"/>
+        </scene>
+        <!--Third Step View Controller-->
+        <scene sceneID="V94-ZV-nHm">
+            <objects>
+                <viewController storyboardIdentifier="ThirdStepViewController" id="vzk-CO-Lrm" customClass="ThirdStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KhK-AH-ydS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaF-6h-D1s">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="상품 / 서비스 등록" id="ERg-UV-XhP">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="2sw-xH-c4M">
+                                            <connections>
+                                                <action selector="touchUpCancelButton:" destination="vzk-CO-Lrm" id="IUl-ZY-Gvi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LaF-6h-D1s" firstAttribute="top" secondItem="qJ1-4Z-Bot" secondAttribute="top" id="Amu-2c-BNX"/>
+                            <constraint firstItem="LaF-6h-D1s" firstAttribute="leading" secondItem="qJ1-4Z-Bot" secondAttribute="leading" id="bm9-Qm-zrB"/>
+                            <constraint firstItem="LaF-6h-D1s" firstAttribute="trailing" secondItem="qJ1-4Z-Bot" secondAttribute="trailing" id="gEk-hg-Gq1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qJ1-4Z-Bot"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D19-4B-Qhu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5562" y="1248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iSh-My-ioT">
@@ -124,7 +282,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="slq-4h-VEo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vuO-HY-Wm6">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
