@@ -15,11 +15,12 @@ class ThirdStepViewController: UIViewController {
     
     // MARK:- IBOulet
     @IBOutlet var selectedImageView: UIImageView!
+    @IBOutlet var selectImageButton: UIButton!
     
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //button.setTitle("확인", for: .normal)
+        selectedImageView.image = UIImage(named: "beforeSelectItem")
         registerButton.setTitleColor(UIColor.blue, for: .normal)
         registerButton.setImage(UIImage(named: "register"), for: .normal)
         registerButton.addTarget(self, action: #selector(touchUpRegisterButton), for: .touchUpInside)
@@ -70,6 +71,7 @@ extension ThirdStepViewController: UIImagePickerControllerDelegate,UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedImageView.image = img
+
             dismiss(animated: true, completion: nil)
         } else {
             dismiss(animated: true, completion: nil)
