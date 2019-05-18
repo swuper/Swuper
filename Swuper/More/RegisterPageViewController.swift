@@ -42,10 +42,9 @@ class RegisterPageViewController: UIPageViewController {
     {
         return UIStoryboard(name: "MoreView", bundle: nil).instantiateViewController(withIdentifier: identifier)
     }
-    
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 100, width: UIScreen.main.bounds.width,height: 60))
+        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 90, width: UIScreen.main.bounds.width,height: 60))
         self.pageControl.numberOfPages = pages.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.orange
@@ -90,37 +89,28 @@ extension RegisterPageViewController: UIPageViewControllerDataSource {
         guard let viewControllerIndex = pages.index(of: viewController) else {
             return nil
         }
-        
         let previousIndex = viewControllerIndex - 1
-        
         guard previousIndex >= 0 else {
             return nil
         }
-        
         guard pages.count > previousIndex else {
             return nil
         }
-        
-        return pages[previousIndex]
-        
+        return pages[previousIndex]        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = pages.index(of: viewController) else {
             return nil
         }
-        
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = pages.count
-        
         guard orderedViewControllersCount != nextIndex else {
             return nil
         }
-        
         guard orderedViewControllersCount > nextIndex else {
             return nil
         }
-        
         return pages[nextIndex]
     }
     

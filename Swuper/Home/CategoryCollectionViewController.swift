@@ -10,17 +10,17 @@ import UIKit
 
 class CategoryCollectionViewController: UIViewController {
 
-    // IBOulet
+    // MARK:- IBOulet
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var categorySegment: UISegmentedControl!
     
-    // Properties
+    // MARk:- Properties
     let cell = "CategoryCell"
     let buttonBar = UIView()
     var categoryImage: [String] = ["earring", "flower", "macaron", "paper", "candle", "ceramic"]
     var categoryTitle: [String] = ["귀걸이", "꽃", "마카롱", "문구류", "캔들", "도자기"]
     
-    // LifeCycle
+    // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         customSegment()
@@ -34,7 +34,7 @@ class CategoryCollectionViewController: UIViewController {
         self.collectionView.collectionViewLayout = flowLayout
     }
     
-    // Function
+    // MARK:- Function
     func customSegment() {
         categorySegment.backgroundColor = .clear
         categorySegment.tintColor = .clear
@@ -55,7 +55,7 @@ class CategoryCollectionViewController: UIViewController {
         buttonBar.widthAnchor.constraint(equalTo: categorySegment.widthAnchor, multiplier: 1 / CGFloat(categorySegment.numberOfSegments)).isActive = true
     }
     
-    // IBAction
+    // MARK:-IBAction
     @IBAction func categorySegmentValueChanged(_ sender: UISegmentedControl) {
         UIView.animate(withDuration: 0.3) {
             self.buttonBar.frame.origin.x = (self.categorySegment.frame.width / CGFloat(self.categorySegment.numberOfSegments)) * CGFloat(self.categorySegment.selectedSegmentIndex)
@@ -72,6 +72,7 @@ class CategoryCollectionViewController: UIViewController {
     */
 }
 
+// MARK:- DataSource
 extension CategoryCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryImage.count

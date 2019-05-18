@@ -13,9 +13,7 @@ class FirstStepViewController: UIViewController {
  
     //MARK:- Properties
     var pageControl = UIPageControl()
-    //var itemClassList = ["상품", "클래스"]
-//    var categoryList = ["꽃", "문구류", "수제먹거리", "악세서리", "캔들,디퓨저", "공예품"]
-    
+
     // MARK:- IBOulet
     @IBOutlet var itemClassDropDown: DropDown!
     @IBOutlet var categoryDropDown: DropDown!
@@ -23,17 +21,30 @@ class FirstStepViewController: UIViewController {
     @IBOutlet var priceTextField: UITextField!
     @IBOutlet var kakaoTalkURLTextField: UITextField!
     
+    // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         itemClassDropDown.optionArray = ["상품", "클래스"]
         categoryDropDown.optionArray = ["꽃", "문구류", "수제먹거리", "악세서리", "캔들,디퓨저", "공예품"]
-        itemClassDropDown.backgroundColor = UIColor.white
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
+    // MARK:- Function
+    @objc func keyboardWillShow(_ sender:Notification){
+        self.view.frame.origin.y = -120
+    }
+    @objc func keyboardWillHide(_ sender:Notification){
+        self.view.frame.origin.y = 0
+    }
+    
+    // MARK:- IBAction
     @IBAction func touchUpCancelButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     
@@ -50,4 +61,10 @@ class FirstStepViewController: UIViewController {
 
 }
 
-
+// MARK:- Delegate
+extension FirstStepViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

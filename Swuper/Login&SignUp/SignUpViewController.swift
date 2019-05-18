@@ -10,26 +10,35 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
-    // IBOulet
+    // MARK:- IBOulet
     @IBOutlet var EmailAdressTextField: UITextField!
     @IBOutlet var IDTextField: UITextField!
     @IBOutlet var PasswordField: UITextField!
     @IBOutlet var ConfirmPasswordTextField: UITextField!
     @IBOutlet var selectedImageView: UIImageView!
     
-    // Properties
+    // MARK:- Properties
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
-    // LifeCycle
+    // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedImageView.image = UIImage(named: "user")
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.gray
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         //activityIndicator.activityIndicatorView.Style = UIActivityIndicatorView.Style.gray
     }
     
+    // MARK:- Function
+    @objc func keyboardWillShow(_ sender:Notification){
+        self.view.frame.origin.y = -150
+    }
+    @objc func keyboardWillHide(_ sender:Notification){
+        self.view.frame.origin.y = 0
+    }
     /*
     // MARK: - Navigation
 
@@ -40,7 +49,7 @@ class SignUpViewController: UIViewController {
     }
     */
     
-    //IBAction
+    // MARK:- IBAction
     @IBAction func TapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
@@ -85,7 +94,7 @@ class SignUpViewController: UIViewController {
     
 }
 
-// delegate
+// MARK:- delegate
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

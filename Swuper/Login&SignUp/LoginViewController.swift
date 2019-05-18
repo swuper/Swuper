@@ -10,25 +10,33 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    // IBOulet
+    // MARK:- IBOulet
     @IBOutlet var IDTextField: UITextField!
     @IBOutlet var PasswordTextField: UITextField!
     
-    // LifeCycle
+    // MARK:-LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
+    // MARK:- Function
+    @objc func keyboardWillShow(_ sender:Notification){
+        self.view.frame.origin.y = -150
+    }
+    @objc func keyboardWillHide(_ sender:Notification){
+        self.view.frame.origin.y = 0
+    }
     
-    // IBAction
+    // MARK:- IBAction
     @IBAction func TapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
     
 }
 
-// delegate
+// MARK:- delegate
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
