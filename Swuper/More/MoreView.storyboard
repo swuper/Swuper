@@ -392,9 +392,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o70-ga-LES">
-                                <rect key="frame" x="35" y="200" width="349" height="200"/>
+                                <rect key="frame" x="35" y="200" width="349" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="aMg-80-anj"/>
+                                    <constraint firstAttribute="height" constant="150" id="aMg-80-anj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 이미지 업로드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqP-0y-D0c">
@@ -404,19 +404,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X0d-Gg-JSa">
-                                <rect key="frame" x="30" y="432" width="354" height="330"/>
+                                <rect key="frame" x="30" y="382" width="354" height="380"/>
                                 <color key="backgroundColor" red="0.94547775886990693" green="0.94547775886990693" blue="0.94547775886990693" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="상품 / 서비스 부가설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wu-R3-Lda">
-                                <rect key="frame" x="35" y="410" width="151.5" height="20"/>
+                                <rect key="frame" x="35" y="360" width="151.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-HY-F6g">
-                                <rect key="frame" x="35" y="200" width="349" height="200"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-HY-F6g">
+                                <rect key="frame" x="35" y="200" width="349" height="150"/>
                                 <connections>
                                     <action selector="openPhotoLibrary:" destination="vzk-CO-Lrm" eventType="touchUpInside" id="kZL-mS-jub"/>
                                 </connections>
@@ -472,7 +472,6 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="selectImageButton" destination="z8X-HY-F6g" id="2uO-I0-sxr"/>
                         <outlet property="selectedImageView" destination="o70-ga-LES" id="b1H-Ag-vPn"/>
                     </connections>
                 </viewController>
