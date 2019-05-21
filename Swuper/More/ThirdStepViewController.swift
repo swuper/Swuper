@@ -15,7 +15,7 @@ class ThirdStepViewController: UIViewController {
     
     // MARK:- IBOulet
     @IBOutlet var selectedImageView: UIImageView!
-    @IBOutlet var selectImageButton: UIButton!
+    @IBOutlet var explanationTextView: UITextView!
     
     // MARK:- LifeCycle
     override func viewDidLoad() {
@@ -31,6 +31,11 @@ class ThirdStepViewController: UIViewController {
     
     // MARK:- Function
     @objc func touchUpRegisterButton() {
+        UserInformation.shared.itemImage = selectedImageView.image
+        UserInformation.shared.explanation = explanationTextView.text
+        print(UserInformation.shared.self)
+        print(UserInformation.shared.itemImage)
+        print(UserInformation.shared.place)
         print("aa")
     }
     @objc func keyboardWillShow(_ sender:Notification){

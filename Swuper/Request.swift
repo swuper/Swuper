@@ -9,7 +9,12 @@
 import Foundation
 import Alamofire
 
+let DidRecieveLoginTokenNotification: Notification.Name = Notification.Name("DidRecieveLoginTokenNotification")
+let DidRecieveExceptionNotification: Notification.Name = Notification.Name("DidRecieveExeptionNotification")
+
+
 func LoginPost(id: String, password: String) {
+    var flag = false
     let parameters = [
         "userId" : id,
         "password" : password
@@ -19,23 +24,31 @@ func LoginPost(id: String, password: String) {
             return .success
         }
         .responseJSON { response in
-            
             switch response.result {
             //성공일 때
             case .success( _):
                 print("success")
+                //print(response)
+                guard let response = response.result.value as? [String:Any] else { return }
                 print(response)
+                if ((response["exception"]) != nil){
+                    NotificationCenter.default.post(name: DidRecieveExceptionNotification, object: nil)
+                }
+                if ((response["token"]) != nil) {
+                    print("-------------------------------")
+                    print(response["token"])
+                    NotificationCenter.default.post(name: DidRecieveLoginTokenNotification, object: nil, userInfo: ["token" : response])
+                }
             //실패할 때
             case .failure(_):
                 print("failure")
                 debugPrint(response)
             }
     }
-    
 }
 
 func post(emailAdress: String, name: String, password: String, image: UIImage) {
-    let url = "http://3.16.157.244:8090/members/signUp"
+    let url = "http://3.16.157.244:8090/signUp"
     let parameters = [
         "email" : emailAdress,
         "username" : name,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5503DF6A765830D6F246AE33 /* Pods_Swuper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10ED59C0392F1056BAB576CE /* Pods_Swuper.framework */; };
 		99077FE52290139300E80BA1 /* Helvetica-Bold-Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99077FE42290139300E80BA1 /* Helvetica-Bold-Font.ttf */; };
 		990972C3227AB0D000DAA3D6 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C2227AB0D000DAA3D6 /* HomeView.storyboard */; };
 		990972C5227AB2DB00DAA3D6 /* LikeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */; };
@@ -24,19 +25,18 @@
 		991AE823228C457000E49D3A /* FirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AE822228C457000E49D3A /* FirstStepViewController.swift */; };
 		991AE825228C458300E49D3A /* SecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AE824228C458300E49D3A /* SecondStepViewController.swift */; };
 		991AE827228C459100E49D3A /* ThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AE826228C459100E49D3A /* ThirdStepViewController.swift */; };
+		992FB03D2291092100750C51 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FB03C2291092100750C51 /* UserInformation.swift */; };
 		9993C2BE225DB41100A6B851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BD225DB41100A6B851 /* AppDelegate.swift */; };
 		9993C2C0225DB41100A6B851 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BF225DB41100A6B851 /* LoginViewController.swift */; };
 		9993C2C3225DB41200A6B851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C1225DB41200A6B851 /* Main.storyboard */; };
 		9993C2C6225DB41200A6B851 /* Swuper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2C4225DB41200A6B851 /* Swuper.xcdatamodeld */; };
 		9993C2C8225DB41400A6B851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C7225DB41400A6B851 /* Assets.xcassets */; };
 		9993C2CB225DB41400A6B851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C9225DB41400A6B851 /* LaunchScreen.storyboard */; };
-		EFD4BCE79AAF2777E86800B7 /* Pods_Swuper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9518FD74A252EEBC78D2EE6F /* Pods_Swuper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		536AEF1A90227FB3F75065EA /* Pods-Swuper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.debug.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.debug.xcconfig"; sourceTree = "<group>"; };
-		72EA65CC42926C7D01E15013 /* Pods-Swuper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.release.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.release.xcconfig"; sourceTree = "<group>"; };
-		9518FD74A252EEBC78D2EE6F /* Pods_Swuper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swuper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02E51FC8B78D0C596F0468BA /* Pods-Swuper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.release.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.release.xcconfig"; sourceTree = "<group>"; };
+		10ED59C0392F1056BAB576CE /* Pods_Swuper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swuper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99077FE42290139300E80BA1 /* Helvetica-Bold-Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Helvetica-Bold-Font.ttf"; path = "../../../Downloads/Helvetica-Bold-Font.ttf"; sourceTree = "<group>"; };
 		990972C2227AB0D000DAA3D6 /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeView.storyboard; sourceTree = "<group>"; };
@@ -54,6 +54,7 @@
 		991AE822228C457000E49D3A /* FirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStepViewController.swift; sourceTree = "<group>"; };
 		991AE824228C458300E49D3A /* SecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondStepViewController.swift; sourceTree = "<group>"; };
 		991AE826228C459100E49D3A /* ThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdStepViewController.swift; sourceTree = "<group>"; };
+		992FB03C2291092100750C51 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		9993C2BA225DB41100A6B851 /* Swuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9993C2BD225DB41100A6B851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9993C2BF225DB41100A6B851 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		9993C2C7225DB41400A6B851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9993C2CA225DB41400A6B851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9993C2CC225DB41400A6B851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDE584216E160F3279B526A6 /* Pods-Swuper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swuper.debug.xcconfig"; path = "Target Support Files/Pods-Swuper/Pods-Swuper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD4BCE79AAF2777E86800B7 /* Pods_Swuper.framework in Frameworks */,
+				5503DF6A765830D6F246AE33 /* Pods_Swuper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +81,18 @@
 		08BF77AAB3D05924A6BBFDC7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				536AEF1A90227FB3F75065EA /* Pods-Swuper.debug.xcconfig */,
-				72EA65CC42926C7D01E15013 /* Pods-Swuper.release.xcconfig */,
+				DDE584216E160F3279B526A6 /* Pods-Swuper.debug.xcconfig */,
+				02E51FC8B78D0C596F0468BA /* Pods-Swuper.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		292CFA99059A846C22261FF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10ED59C0392F1056BAB576CE /* Pods_Swuper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9907B5C92276C46D00FF12AF /* Login&SignUp */ = {
@@ -150,7 +160,7 @@
 				9993C2BC225DB41100A6B851 /* Swuper */,
 				9993C2BB225DB41100A6B851 /* Products */,
 				08BF77AAB3D05924A6BBFDC7 /* Pods */,
-				D9701D16702923A18F4DBD48 /* Frameworks */,
+				292CFA99059A846C22261FF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +178,7 @@
 				9993C2BD225DB41100A6B851 /* AppDelegate.swift */,
 				990972DC227AD5C700DAA3D6 /* Request.swift */,
 				99077FE42290139300E80BA1 /* Helvetica-Bold-Font.ttf */,
+				992FB03C2291092100750C51 /* UserInformation.swift */,
 				9993C2C1225DB41200A6B851 /* Main.storyboard */,
 				990972DB227AC4E000DAA3D6 /* Model */,
 				9907B5C92276C46D00FF12AF /* Login&SignUp */,
@@ -182,14 +193,6 @@
 			path = Swuper;
 			sourceTree = "<group>";
 		};
-		D9701D16702923A18F4DBD48 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9518FD74A252EEBC78D2EE6F /* Pods_Swuper.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,11 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9993C2CF225DB41400A6B851 /* Build configuration list for PBXNativeTarget "Swuper" */;
 			buildPhases = (
-				0C1C29BA5ECBF04A2F6E3E9A /* [CP] Check Pods Manifest.lock */,
+				226D705A0E5C43D258510370 /* [CP] Check Pods Manifest.lock */,
 				9993C2B6225DB41100A6B851 /* Sources */,
 				9993C2B7225DB41100A6B851 /* Frameworks */,
 				9993C2B8225DB41100A6B851 /* Resources */,
-				FA4EA9A6882F6A4CA0356193 /* [CP] Embed Pods Frameworks */,
+				EB8CE2B7B608298AECD05E1B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,7 +266,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C1C29BA5ECBF04A2F6E3E9A /* [CP] Check Pods Manifest.lock */ = {
+		226D705A0E5C43D258510370 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,7 +288,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA4EA9A6882F6A4CA0356193 /* [CP] Embed Pods Frameworks */ = {
+		EB8CE2B7B608298AECD05E1B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992FB03D2291092100750C51 /* UserInformation.swift in Sources */,
 				990972CC227AC0F700DAA3D6 /* CategoryCollectionViewController.swift in Sources */,
 				991AE821228C451900E49D3A /* RegisterPageViewController.swift in Sources */,
 				990972DD227AD5C700DAA3D6 /* Request.swift in Sources */,
@@ -475,7 +479,7 @@
 		};
 		9993C2D0225DB41400A6B851 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 536AEF1A90227FB3F75065EA /* Pods-Swuper.debug.xcconfig */;
+			baseConfigurationReference = DDE584216E160F3279B526A6 /* Pods-Swuper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -496,7 +500,7 @@
 		};
 		9993C2D1225DB41400A6B851 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72EA65CC42926C7D01E15013 /* Pods-Swuper.release.xcconfig */;
+			baseConfigurationReference = 02E51FC8B78D0C596F0468BA /* Pods-Swuper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
