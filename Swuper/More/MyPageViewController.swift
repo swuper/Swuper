@@ -10,12 +10,29 @@ import UIKit
 
 class MyPageViewController: UIViewController {
 
+    @IBOutlet var MyPageTableView: UITableView!
+    @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var userEmailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        userNameLabel.text = UserInformation.shared.username
+        userEmailLabel.text = UserInformation.shared.email
+        DispatchQueue.global().async {
+            guard let imageURL: URL = URL(string: UserInformation.shared.profileImg ?? "") else { return }
+            guard let imageData: Data = try? Data(contentsOf: imageURL) else { return }
+            DispatchQueue.main.async {
+                self.userImageView.image = UIImage(data: imageData)
+            }
+        }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        MyPageTableView.reloadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        MyPageTableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation

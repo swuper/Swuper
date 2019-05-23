@@ -34,7 +34,7 @@ class SignUpViewController: UIViewController {
     
     // MARK:- Function
     @objc func keyboardWillShow(_ sender:Notification){
-        self.view.frame.origin.y = -150
+        self.view.frame.origin.y = -50
     }
     @objc func keyboardWillHide(_ sender:Notification){
         self.view.frame.origin.y = 0
@@ -77,8 +77,13 @@ class SignUpViewController: UIViewController {
             // 인코딩
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             activityIndicator.startAnimating()
-            guard let img = selectedImageView.image else { return }
-            post(emailAdress: EmailAdressTextField.text ?? "", name: IDTextField.text ?? "", password: PasswordField.text ?? "", image: img)
+            
+            guard var img = selectedImageView.image else { return }
+            if (img == nil) {
+                img = UIImage(named: "user")!
+            }
+
+            signUpRequest(emailAdress: EmailAdressTextField.text ?? "", name: IDTextField.text ?? "", password: PasswordField.text ?? "", image: img)
 
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             activityIndicator.stopAnimating()

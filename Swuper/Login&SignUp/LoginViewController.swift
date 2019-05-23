@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK:- Properties
-    var token: Any?
+    var response: Any?
 
     // MARK:- IBOulet
     @IBOutlet var IDTextField: UITextField!
@@ -34,15 +34,15 @@ class LoginViewController: UIViewController {
     
     // MARK:- Function
     @objc func keyboardWillShow(_ sender:Notification){
-        self.view.frame.origin.y = -150
+        self.view.frame.origin.y = -100
     }
     @objc func keyboardWillHide(_ sender:Notification){
         self.view.frame.origin.y = 0
     }
     @objc func didrecieveLoginTokenNotification(_ noti: Notification) {
-        token = noti.userInfo?["token"]
-        print("=============token===========")
-        print(token)
+        guard let response = noti.userInfo?["response"] else { return }
+        print("=============response===========")
+        print(response)
         print("=============================")
         guard let VC = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") else { return }
         VC.modalTransitionStyle = UIModalTransitionStyle.coverVertical

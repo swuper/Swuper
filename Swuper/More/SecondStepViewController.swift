@@ -61,6 +61,13 @@ class SecondStepViewController: UIViewController {
         }
         self.view.endEditing(true)
     }
+    
+    func showErrorAlertController(style: UIAlertController.Style) {
+        let alertController = UIAlertController(title: "알림", message: "숫자만 입력해주세요", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: false, completion: nil)
+    }
 
     // MARK:- IBAction
     @IBAction func touchUpCancelButton(_ sender: UIButton) {
@@ -92,9 +99,33 @@ extension SecondStepViewController: UITextFieldDelegate {
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UserInformation.shared.place = placeTextField.text
-        UserInformation.shared.date = dateTextField.text
-        UserInformation.shared.limitedPeople = limitedPeopleTextField.text
-        UserInformation.shared.useTime = useTimeTextField.text
+        if (limitedPeopleTextField.text != "") {
+            guard let num = Int(limitedPeopleTextField.text!) else {showErrorAlertController(style: UIAlertController.Style.alert); return}
+            ItemInformation.secondPage.limitMemberNumber = num
+        }
+        if let placeText = placeTextField.text {
+            ItemInformation.secondPage.place = placeText
+        }
+        if let dateText = dateTextField.text {
+            ItemInformation.secondPage.startAt = dateText
+        }
+        if let useTimeText = useTimeTextField.text {
+            ItemInformation.secondPage.spendTime = useTimeText
+        }
+        
+        if (placeTextField.text == "" || dateTextField.text == "" || limitedPeopleTextField.text == "" || useTimeTextField.text == "") {
+            ItemInformation.flag.secondFlag = false
+        } else {
+            ItemInformation.flag.secondFlag = true
+        }
+        
+        
+        
+        
+        
+//        UserInformation.shared.place = placeTextField.text
+//        UserInformation.shared.date = dateTextField.text
+//        UserInformation.shared.limitedPeople = limitedPeopleTextField.text
+//        UserInformation.shared.useTime = useTimeTextField.text
     }
 }

@@ -15,7 +15,8 @@ class FirstStepViewController: UIViewController {
     let itemClassPicker = UIPickerView()
     let categoryPicker = UIPickerView()
     let itemClass: [String] = ["","상품", "클래스"]
-    let category: [String] = ["","꽃", "문구류", "수제먹거리", "악세서리", "캔들,디퓨저", "공예품"]
+    let itemCategory: [String] = ["","꽃", "문구류", "수제먹거리", "악세서리", "캔들,디퓨저", "공예품"]
+    let classCateogry: [String] = ["", "음악", "스포츠", "교육"]
     
     // MARK:- IBOulet
     @IBOutlet var itemClassTextField: UITextField!
@@ -45,8 +46,7 @@ class FirstStepViewController: UIViewController {
     @objc func keyboardWillHide(_ sender:Notification){
         self.view.frame.origin.y = 0
     }
-    
-    
+
     // MARK:- IBAction
     @IBAction func touchUpCancelButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -74,11 +74,28 @@ extension FirstStepViewController: UITextFieldDelegate {
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UserInformation.shared.itemClass = itemClassTextField.text
-        UserInformation.shared.category = categoryTextField.text
-        UserInformation.shared.itemClassTitle = titleTextField.text
-        UserInformation.shared.place = priceTextField.text
-        UserInformation.shared.openKakaoURL = kakaoTalkURLTextField.text
+        if let itemClassText = itemClassTextField.text {
+            ItemInformation.firstPage.serviceCategory = itemClassText
+        }
+        if let categoryText = categoryTextField.text {
+            ItemInformation.firstPage.productCategory = categoryText
+        }
+        if let titleText = titleTextField.text {
+            ItemInformation.firstPage.name = titleText
+        }
+        if let priceText = priceTextField.text {
+            ItemInformation.firstPage.price = priceText
+        }
+        if let linkText = kakaoTalkURLTextField.text {
+            ItemInformation.firstPage.openChatHref = linkText
+        }
+        
+        if(itemClassTextField.text == "" || categoryTextField.text == "" || titleTextField.text == "" || priceTextField.text == "" || kakaoTalkURLTextField.text == "") {
+            ItemInformation.flag.firstFlag = false
+        } else {
+            ItemInformation.flag.firstFlag = true
+        }
+
     }
 }
 
@@ -88,14 +105,25 @@ extension FirstStepViewController: UIPickerViewDelegate {
         if pickerView == itemClassPicker {
             itemClassTextField.text = itemClass[row]
         } else {
-            categoryTextField.text = category[row]
+            if (itemClassTextField.text == "상품") {
+                categoryTextField.text = itemCategory[row]
+            } else if (itemClassTextField.text == "클래스") {
+                categoryTextField.text = classCateogry[row]
+            } else {
+            }
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == itemClassPicker {
             return itemClass[row]
         } else {
-            return category[row]
+            if (itemClassTextField.text == "상품") {
+                return itemCategory[row]
+            } else if (itemClassTextField.text == "클래스") {
+                return classCateogry[row]
+            } else {
+                return ("상품/클래스를 먼저 선택해주세요.")
+            }
         }
     }
 }
@@ -109,7 +137,13 @@ extension FirstStepViewController: UIPickerViewDataSource {
         if pickerView == itemClassPicker {
             return itemClass.count
         } else {
-            return category.count
+            if (itemClassTextField.text == "상품") {
+                return itemCategory.count
+            } else if (itemClassTextField.text == "클래스") {
+                return classCateogry.count
+            } else {
+                return 1
+            }
         }
     }
 }

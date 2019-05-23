@@ -12,14 +12,9 @@ import UIKit
 class UserInformation {
     static let shared = UserInformation()
     
-    var itemClass: String?
-    var category: String?
-    var itemClassTitle: String?
-    var openKakaoURL: String?
-    var place: String?
-    var date: String?
-    var limitedPeople: String?
-    var useTime: String?
-    var itemImage: UIImage?
-    var explanation: String?
+    var token: String?
+    var memberId: Int?
+    var username: String?
+    var profileImg: String?
+    var email: String?
 }

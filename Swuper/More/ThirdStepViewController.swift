@@ -27,16 +27,30 @@ class ThirdStepViewController: UIViewController {
         self.view.addSubview(registerButton)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+
     }
     
     // MARK:- Function
     @objc func touchUpRegisterButton() {
-        UserInformation.shared.itemImage = selectedImageView.image
-        UserInformation.shared.explanation = explanationTextView.text
-        print(UserInformation.shared.self)
-        print(UserInformation.shared.itemImage)
-        print(UserInformation.shared.place)
-        print("aa")
+        
+        if (ItemInformation.flag.firstFlag == true && ItemInformation.flag.secondFlag == true) {
+            guard let img = selectedImageView.image else { return }
+            guard let info = explanationTextView.text else { return }
+            if (img == nil || info == "") {
+                // 정보를 모두 입력해주시오 alert
+                print("정보를 모두 입력")
+            } else {
+                guard let memberId = UserInformation.shared.memberId else { return }
+                guard let token = UserInformation.shared.token else { return }
+                itemPost(memberId: memberId, productCategory: (ItemInformation.firstPage.productCategory)!, serviceCategory: (ItemInformation.firstPage.serviceCategory)!, name: (ItemInformation.firstPage.name)!, price: (ItemInformation.firstPage.price)!, openChatHref: (ItemInformation.firstPage.openChatHref)!, place: (ItemInformation.secondPage.place)!, startAt: (ItemInformation.secondPage.startAt)!, limitMemberNumber: (ItemInformation.secondPage.limitMemberNumber)!, spendTime: (ItemInformation.secondPage.spendTime)!, image: img, text: info, token: token)
+            }
+        } else {
+            print("앞 내용 부족")
+        }
+        
+//        UserInformation.shared.itemImage = selectedImageView.image
+//        UserInformation.shared.explanation = explanationTextView.text
+        
     }
     @objc func keyboardWillShow(_ sender:Notification){
         self.view.frame.origin.y = -120
@@ -71,6 +85,7 @@ class ThirdStepViewController: UIViewController {
 
 }
 
+// MARK:- Delegate
 extension ThirdStepViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
