@@ -75,18 +75,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="113.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZV-zA-U83">
-                                                    <rect key="frame" x="20" y="15" width="87" height="83"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DZV-zA-U83">
+                                                    <rect key="frame" x="20" y="15" width="87" height="87"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="87" id="lxt-Mh-8rk"/>
+                                                        <constraint firstAttribute="width" constant="87" id="umY-5G-ug3"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtg-aL-FNy">
-                                                    <rect key="frame" x="123" y="34" width="124" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtg-aL-FNy">
+                                                    <rect key="frame" x="123" y="34" width="281" height="45.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DZV-zA-U83" firstAttribute="leading" secondItem="SI2-gq-abe" secondAttribute="leading" constant="20" id="0Uq-bB-KYO"/>
+                                                <constraint firstItem="DZV-zA-U83" firstAttribute="top" secondItem="SI2-gq-abe" secondAttribute="top" constant="15" id="95B-7T-CHJ"/>
+                                                <constraint firstItem="vtg-aL-FNy" firstAttribute="top" secondItem="SI2-gq-abe" secondAttribute="top" constant="34" id="BZh-dW-Pc3"/>
+                                                <constraint firstAttribute="trailing" secondItem="vtg-aL-FNy" secondAttribute="trailing" constant="10" id="ClO-UI-ZFv"/>
+                                                <constraint firstAttribute="bottom" secondItem="vtg-aL-FNy" secondAttribute="bottom" constant="34" id="hAV-zK-p4t"/>
+                                                <constraint firstItem="vtg-aL-FNy" firstAttribute="leading" secondItem="DZV-zA-U83" secondAttribute="trailing" constant="16" id="yfg-aM-aTe"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemImageView" destination="DZV-zA-U83" id="AzX-gt-cQe"/>
@@ -94,6 +104,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oHS-m4-SYI" id="BVw-vl-VHv"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

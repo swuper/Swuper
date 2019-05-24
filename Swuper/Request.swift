@@ -11,6 +11,7 @@ import Alamofire
 
 let DidRecieveLoginTokenNotification: Notification.Name = Notification.Name("DidRecieveLoginTokenNotification")
 let DidRecieveExceptionNotification: Notification.Name = Notification.Name("DidRecieveExeptionNotification")
+let DidRecieveUserItemNotification: Notification.Name = Notification.Name("DidRecieveUserItemNotification")
 
 // 로그인
 func LoginPost(id: String, password: String) {
@@ -156,13 +157,8 @@ func userItemRequest(token: String, memberId: Int) {
         case .success:
             print("success")
             guard let response = response.result.value as? [String:Any] else { return }
-            print("======================================")
-            print(response)
-            print("======================================")
-            print()
-            print(response["response"] as? [[String: Any]])
-
-
+            guard let res = response["response"] as? [[String: Any]] else { return }
+            NotificationCenter.default.post(name: DidRecieveUserItemNotification, object: nil, userInfo: ["response" : res])
         case .failure:
             print("failure")
             print(response)
