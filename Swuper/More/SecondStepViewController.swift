@@ -118,14 +118,5 @@ extension SecondStepViewController: UITextFieldDelegate {
         } else {
             ItemInformation.flag.secondFlag = true
         }
-        
-        
-        
-        
-        
-//        UserInformation.shared.place = placeTextField.text
-//        UserInformation.shared.date = dateTextField.text
-//        UserInformation.shared.limitedPeople = limitedPeopleTextField.text
-//        UserInformation.shared.useTime = useTimeTextField.text
     }
 }

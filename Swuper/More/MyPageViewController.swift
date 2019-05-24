@@ -28,10 +28,17 @@ class MyPageViewController: UIViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        guard let token = UserInformation.shared.token else { return }
+        guard let memberId = UserInformation.shared.memberId else { return }
+        userItemRequest(token: token, memberId: memberId)
         MyPageTableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
+        guard let token = UserInformation.shared.token else { return }
+        guard let memberId = UserInformation.shared.memberId else { return }
+        //userItemRequest(token: token, memberId: memberId)
         MyPageTableView.reloadData()
+        
     }
 
     /*

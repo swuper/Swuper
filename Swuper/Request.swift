@@ -12,7 +12,7 @@ import Alamofire
 let DidRecieveLoginTokenNotification: Notification.Name = Notification.Name("DidRecieveLoginTokenNotification")
 let DidRecieveExceptionNotification: Notification.Name = Notification.Name("DidRecieveExeptionNotification")
 
-
+// 로그인
 func LoginPost(id: String, password: String) {
     let parameters = [
         "userId" : id,
@@ -49,6 +49,7 @@ func LoginPost(id: String, password: String) {
     }
 }
 
+// 회원가입
 func signUpRequest(emailAdress: String, name: String, password: String, image: UIImage) {
     let url = "http://3.16.157.244:8090/signUp"
     let parameters = [
@@ -91,11 +92,12 @@ func signUpRequest(emailAdress: String, name: String, password: String, image: U
     }
 }
 
+// 상품 등록
 func itemPost(memberId: Int, productCategory: String, serviceCategory: String, name: String, price: String, openChatHref: String, place: String, startAt: String, limitMemberNumber: Int, spendTime: String, image: UIImage, text: String, token: String) {
     let url = "http://3.16.157.244:8090/members/" + String(memberId) + "/products"
     let parameters : [String:Any] = [
-        "productCategory" : "FOOD",
-        "serviceCategory" : "SPORTS",
+        "category" : "FOOD",
+        "type" : "PRODUCT",
         "name" : name,
         "price" : price,
         "openChatHref" : openChatHref,
@@ -106,7 +108,7 @@ func itemPost(memberId: Int, productCategory: String, serviceCategory: String, n
         "text" : text
         ]
     let headers = [
-        "Authorization" :  "Bearer " + token,
+        "Authorization" : "Bearer " + token,
         "Content-type" : "multipart/form-data"
     ]
     let imageData = image.pngData()
@@ -131,34 +133,42 @@ func itemPost(memberId: Int, productCategory: String, serviceCategory: String, n
             upload.responseJSON { MultipartFormData in
                 print("success")
                 print(MultipartFormData.result.value)
-                print("--------------------------------")
-                print(MultipartFormData.response)
-                print("--------------------------------")
-                print(MultipartFormData.response?.statusCode)
             }
         case .failure(let encodingError):
             print("failure")
             print(encodingError)
         }
     }
-//    print(memberId)
-//    print(productCategory)
-//    print(serviceCategory)
-//    print(name)
-//    print(price)
-//    print(openChatHref)
-//    print(place)
-//    print(startAt)
-//    print(limitMemberNumber)
-//    print(spendTime)
-//    print(image)
-//    print(text)
-    
-    // 상품 등록
 }
 
-func userItemRequest() {
-    // 상품 목록 요청
+func userItemRequest(token: String, memberId: Int) {
+    // 사용자 상품 목록 요청
+    let parameters = [
+        "page" : 0
+    ]
+    let headers = [
+        "Authorization" : "Bearer " + token
+    ]
+    // http://3.16.157.244:8090/members/5/products/get?page=0
+    let url = "http://3.16.157.244:8090/members/" + String(memberId) + "/products/get?page=0"
+    Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        switch response.result {
+        case .success:
+            print("success")
+            guard let response = response.result.value as? [String:Any] else { return }
+            print("======================================")
+            print(response)
+            print("======================================")
+            print()
+            print(response["response"] as? [[String: Any]])
+
+
+        case .failure:
+            print("failure")
+            print(response)
+        }
+    }
+    
 }
 
 func allItemRequest() {

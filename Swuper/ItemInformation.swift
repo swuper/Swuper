@@ -33,17 +33,4 @@ struct ItemInformation {
         var firstFlag: Bool?
         var secondFlag: Bool?
     }
-    
-    
-//    var limitMemberNumber: Int?
-//    var itemImage: UIImage?
-//    var name: String?
-//    var openChatHref: String?
-//    var place: String?
-//    var price: String?
-//    var productCategory: String?
-//    var serviceCategory: String?
-//    var spendTime: String?
-//    var startAt: String?
-//    var text: String?
 }

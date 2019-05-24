@@ -36,7 +36,6 @@ class FirstStepViewController: UIViewController {
         categoryTextField.inputView = categoryPicker
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     // MARK:- Function
@@ -89,7 +88,6 @@ extension FirstStepViewController: UITextFieldDelegate {
         if let linkText = kakaoTalkURLTextField.text {
             ItemInformation.firstPage.openChatHref = linkText
         }
-        
         if(itemClassTextField.text == "" || categoryTextField.text == "" || titleTextField.text == "" || priceTextField.text == "" || kakaoTalkURLTextField.text == "") {
             ItemInformation.flag.firstFlag = false
         } else {
@@ -100,7 +98,6 @@ extension FirstStepViewController: UITextFieldDelegate {
 }
 
 extension FirstStepViewController: UIPickerViewDelegate {
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == itemClassPicker {
             itemClassTextField.text = itemClass[row]
@@ -128,7 +125,7 @@ extension FirstStepViewController: UIPickerViewDelegate {
     }
 }
 
-
+// MARK:- DataSource
 extension FirstStepViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
