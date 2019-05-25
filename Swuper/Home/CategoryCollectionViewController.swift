@@ -1,11 +1,3 @@
-//
-//  CategoryCollectionViewController.swift
-//  Swuper
-//
-//  Created by 박주현 on 02/05/2019.
-//  Copyright © 2019 박주현. All rights reserved.
-//
-
 import UIKit
 
 class CategoryCollectionViewController: UIViewController {
@@ -23,6 +15,7 @@ class CategoryCollectionViewController: UIViewController {
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)]
         customSegment()
         let flowLayout: UICollectionViewFlowLayout
         flowLayout = UICollectionViewFlowLayout()
@@ -44,10 +37,10 @@ class CategoryCollectionViewController: UIViewController {
             ], for: .normal)
         categorySegment.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont(name: "DINCondensed-Bold", size: 18),
-            NSAttributedString.Key.foregroundColor: UIColor.orange
+            NSAttributedString.Key.foregroundColor: UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)
             ], for: .selected)
         buttonBar.translatesAutoresizingMaskIntoConstraints = false
-        buttonBar.backgroundColor = UIColor.orange
+        buttonBar.backgroundColor = UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)
         view.addSubview(buttonBar)
         buttonBar.topAnchor.constraint(equalTo: categorySegment.bottomAnchor).isActive = true
         buttonBar.heightAnchor.constraint(equalToConstant: 5).isActive = true

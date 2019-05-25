@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Swuper
-//
-//  Created by 박주현 on 10/04/2019.
-//  Copyright © 2019 박주현. All rights reserved.
-//
-
 import UIKit
 
 class LoginViewController: UIViewController {
@@ -22,9 +14,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-       
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        guard let token = UserInformation.shared.token else { return }
+        guard let memberId = UserInformation.shared.memberId else { return }
+        userItemRequest(token: token, memberId: memberId)
     }
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(didrecieveLoginTokenNotification), name: DidRecieveLoginTokenNotification, object: nil)

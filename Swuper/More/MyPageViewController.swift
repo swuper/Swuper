@@ -1,18 +1,11 @@
-//
-//  MyPageViewController.swift
-//  Swuper
-//
-//  Created by 박주현 on 02/05/2019.
-//  Copyright © 2019 박주현. All rights reserved.
-//
-
 import UIKit
 
 class MyPageViewController: UIViewController {
     
     // MARK:- Propertise
     let cell = "MyPageCell"
-    var res : [[String : Any]] = []
+    var itemResponse : [[String : Any]] = []
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     // MARK:- IBOulet
     @IBOutlet var MyPageTableView: UITableView!
@@ -23,10 +16,10 @@ class MyPageViewController: UIViewController {
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameLabel.text = UserInformation.shared.username
-        userEmailLabel.text = UserInformation.shared.email
+        self.MyPageTableView.separatorStyle = .none
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)]
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
         DispatchQueue.global().async {
             guard let imageURL: URL = URL(string: UserInformation.shared.profileImg ?? "") else { return }
             guard let imageData: Data = try? Data(contentsOf: imageURL) else { return }
@@ -34,35 +27,48 @@ class MyPageViewController: UIViewController {
                 self.userImageView.image = UIImage(data: imageData)
             }
         }
-        guard let token = UserInformation.shared.token else { return }
-        guard let memberId = UserInformation.shared.memberId else { return }
-        userItemRequest(token: token, memberId: memberId)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        view.addSubview(activityIndicator)
+        userNameLabel.text = UserInformation.shared.username
+        userEmailLabel.text = UserInformation.shared.email
         MyPageTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
+        print("viewWillAppear")
         guard let token = UserInformation.shared.token else { return }
         guard let memberId = UserInformation.shared.memberId else { return }
+        activityIndicator.startAnimating()
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
         userItemRequest(token: token, memberId: memberId)
         MyPageTableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
-        guard let token = UserInformation.shared.token else { return }
-        guard let memberId = UserInformation.shared.memberId else { return }
-        userItemRequest(token: token, memberId: memberId)
-        MyPageTableView.reloadData()
+        print("viewDidAppear")
+        DispatchQueue.main.async {
+            self.MyPageTableView.reloadData()
+        }
     }
 
     // MARK:- Function
     @objc func didRecieveUserItemNotification(_ noti: Notification) {
         guard let response = noti.userInfo?["response"] as? [[String:Any]] else { return }
         print("=================noti===================")
-        self.res = response
+        itemResponse = response
         print(response)
-        print(response[0]["name"])
-        print(response.count)
-        MyPageTableView.reloadData()
+        DispatchQueue.main.async {
+            self.MyPageTableView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
+        
+    }
+    @objc func didRecieveErrorNotification(_ noti: Notification) {
+        let alertController = UIAlertController(title: "알림", message: "데이터를 가져오지 못하였습니다", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: false, completion: nil)
+        activityIndicator.stopAnimating()
     }
     /*
     // MARK: - Navigation
@@ -78,26 +84,27 @@ class MyPageViewController: UIViewController {
 // MARK:- DataSource
 extension MyPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return res.count
+        return itemResponse.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = MyPageTableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as? MyPageTableViewCell else { return UITableViewCell() }
-        guard let name = res[indexPath.row]["name"] as? String else { return UITableViewCell() }
-        guard let imgURL = res[indexPath.row]["img"] as? String else { return UITableViewCell() }
+        guard let name = itemResponse[indexPath.row]["name"] as? String else { return UITableViewCell() }
+        guard let imgURL = itemResponse[indexPath.row]["img"] as? String else { return UITableViewCell() }
         DispatchQueue.global().async {
             guard let imageURL: URL = URL(string: imgURL) else { return }
             guard let imageData: Data = try? Data(contentsOf: imageURL) else { return }
             DispatchQueue.main.async {
-                cell.itemImageView.image = UIImage(data: imageData)
+                if let index: IndexPath = tableView.indexPath(for: cell) {
+                    if index.row == indexPath.row {
+                        cell.itemImageView.image = UIImage(data: imageData)
+                    }
+                }
             }
         }
-        //cell.itemTitleLabel.text =
         cell.itemTitleLabel.text = name
         return cell
     }
-    
-    
 }
 
 

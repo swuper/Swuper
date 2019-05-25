@@ -113,6 +113,4 @@ extension RegisterPageViewController: UIPageViewControllerDataSource {
         }
         return pages[nextIndex]
     }
-    
-    
 }

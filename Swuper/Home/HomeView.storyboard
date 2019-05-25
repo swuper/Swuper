@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Category Collection View Controller-->
+        <!--Home-->
         <scene sceneID="s5o-zH-EjO">
             <objects>
                 <viewController id="Ac6-O4-vQA" customClass="CategoryCollectionViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y2o-2L-Krp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IRY-CY-1sa"/>
+                    <navigationItem key="navigationItem" title="Home" id="IRY-CY-1sa"/>
                     <connections>
                         <outlet property="categorySegment" destination="iwW-Cp-Wha" id="o9j-5U-pIg"/>
                         <outlet property="collectionView" destination="SFd-YD-rkN" id="hgY-De-AXD"/>

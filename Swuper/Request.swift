@@ -1,17 +1,10 @@
-//
-//  Request.swift
-//  Swuper
-//
-//  Created by 박주현 on 02/05/2019.
-//  Copyright © 2019 박주현. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 
 let DidRecieveLoginTokenNotification: Notification.Name = Notification.Name("DidRecieveLoginTokenNotification")
 let DidRecieveExceptionNotification: Notification.Name = Notification.Name("DidRecieveExeptionNotification")
 let DidRecieveUserItemNotification: Notification.Name = Notification.Name("DidRecieveUserItemNotification")
+let DidRecieveErrorNotification: Notification.Name = Notification.Name("DidRecieveErrorNotification")
 
 // 로그인
 func LoginPost(id: String, password: String) {
@@ -45,6 +38,7 @@ func LoginPost(id: String, password: String) {
             //실패할 때
             case .failure(_):
                 print("failure")
+                NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
                 print(response)
             }
     }
@@ -88,6 +82,7 @@ func signUpRequest(emailAdress: String, name: String, password: String, image: U
             }
         case .failure(let encodingError):
             print("failure")
+            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : encodingError])
             print(encodingError)
         }
     }
@@ -132,11 +127,12 @@ func itemPost(memberId: Int, productCategory: String, serviceCategory: String, n
         switch result {
         case .success(let upload, _, _):
             upload.responseJSON { MultipartFormData in
-                print("success")
+                print("post-success")
                 print(MultipartFormData.result.value)
             }
         case .failure(let encodingError):
             print("failure")
+            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : encodingError])
             print(encodingError)
         }
     }
@@ -161,6 +157,7 @@ func userItemRequest(token: String, memberId: Int) {
             NotificationCenter.default.post(name: DidRecieveUserItemNotification, object: nil, userInfo: ["response" : res])
         case .failure:
             print("failure")
+            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
             print(response)
         }
     }

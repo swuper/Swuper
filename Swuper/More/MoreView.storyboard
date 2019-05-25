@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PhL-Nc-yQq">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,20 +15,20 @@
             <objects>
                 <viewController id="oHS-m4-SYI" customClass="MyPageViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RYz-c2-NPi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="27U-ao-sCL">
-                                <rect key="frame" x="31" y="241" width="352.5" height="30"/>
+                                <rect key="frame" x="12" y="240.33333333333334" width="351" height="30.000000000000028"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록한 상품 보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lke-E7-7It">
-                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="650-BM-6wF">
-                                        <rect key="frame" x="262.5" y="0.0" width="90" height="30"/>
+                                        <rect key="frame" x="261" y="0.0" width="90" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="Sci-qT-3Ec"/>
                                             <constraint firstAttribute="height" constant="30" id="sis-Ly-u5S"/>
@@ -41,64 +41,78 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sYO-LN-Pzn">
-                                <rect key="frame" x="161.5" y="103" width="91" height="103"/>
+                                <rect key="frame" x="142" y="103" width="91" height="102.33333333333331"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8GD-Rf-Ajy">
-                                        <rect key="frame" x="15.5" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="15.666666666666657" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="0ZL-Ez-plL"/>
                                             <constraint firstAttribute="height" constant="60" id="8Zg-IJ-KXq"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKa-6y-UWE">
-                                        <rect key="frame" x="31" y="65" width="29.5" height="20"/>
+                                        <rect key="frame" x="30.666666666666657" y="65" width="29.666666666666671" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abcd@naver.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6g-Px-iYX">
-                                        <rect key="frame" x="0.0" y="90" width="91" height="13"/>
+                                        <rect key="frame" x="0.0" y="89.666666666666657" width="91" height="12.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="11"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KQC-vs-Haw">
-                                <rect key="frame" x="0.0" y="276" width="414" height="586"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KQC-vs-Haw">
+                                <rect key="frame" x="0.0" y="275.33333333333326" width="375" height="502.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageCell" rowHeight="114" id="Dec-WQ-KkP" customClass="MyPageTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="114"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dec-WQ-KkP" id="SI2-gq-abe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="113.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="113.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DZV-zA-U83">
-                                                    <rect key="frame" x="20" y="15" width="87" height="87"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSf-MP-vKb">
+                                                    <rect key="frame" x="20" y="10" width="335" height="68.666666666666671"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtg-aL-FNy">
+                                                            <rect key="frame" x="95" y="23" width="230" height="22"/>
+                                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DZV-zA-U83">
+                                                            <rect key="frame" x="8" y="9" width="73" height="73"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="73" id="ddG-1v-MMM"/>
+                                                                <constraint firstAttribute="height" constant="73" id="syC-bY-7DP"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.93482975760087139" green="0.93482975760087139" blue="0.93482975760087139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="87" id="lxt-Mh-8rk"/>
-                                                        <constraint firstAttribute="width" constant="87" id="umY-5G-ug3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="DZV-zA-U83" secondAttribute="bottom" constant="9" id="FoR-uG-c9a"/>
+                                                        <constraint firstItem="DZV-zA-U83" firstAttribute="top" secondItem="uSf-MP-vKb" secondAttribute="top" constant="9" id="Vdd-8O-TIa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vtg-aL-FNy" secondAttribute="bottom" constant="23.5" id="WW2-9O-CCE"/>
+                                                        <constraint firstItem="vtg-aL-FNy" firstAttribute="top" secondItem="uSf-MP-vKb" secondAttribute="top" constant="23" id="Xv6-BS-2V7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vtg-aL-FNy" secondAttribute="trailing" constant="10" id="fia-xT-y1p"/>
+                                                        <constraint firstItem="vtg-aL-FNy" firstAttribute="leading" secondItem="DZV-zA-U83" secondAttribute="trailing" constant="14" id="gca-eR-HdQ"/>
+                                                        <constraint firstItem="DZV-zA-U83" firstAttribute="leading" secondItem="uSf-MP-vKb" secondAttribute="leading" constant="8" id="iIq-Ow-kyC"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtg-aL-FNy">
-                                                    <rect key="frame" x="123" y="34" width="281" height="45.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DZV-zA-U83" firstAttribute="leading" secondItem="SI2-gq-abe" secondAttribute="leading" constant="20" id="0Uq-bB-KYO"/>
-                                                <constraint firstItem="DZV-zA-U83" firstAttribute="top" secondItem="SI2-gq-abe" secondAttribute="top" constant="15" id="95B-7T-CHJ"/>
-                                                <constraint firstItem="vtg-aL-FNy" firstAttribute="top" secondItem="SI2-gq-abe" secondAttribute="top" constant="34" id="BZh-dW-Pc3"/>
-                                                <constraint firstAttribute="trailing" secondItem="vtg-aL-FNy" secondAttribute="trailing" constant="10" id="ClO-UI-ZFv"/>
-                                                <constraint firstAttribute="bottom" secondItem="vtg-aL-FNy" secondAttribute="bottom" constant="34" id="hAV-zK-p4t"/>
-                                                <constraint firstItem="vtg-aL-FNy" firstAttribute="leading" secondItem="DZV-zA-U83" secondAttribute="trailing" constant="16" id="yfg-aM-aTe"/>
+                                                <constraint firstAttribute="trailing" secondItem="uSf-MP-vKb" secondAttribute="trailing" constant="20" id="2vF-H6-czB"/>
+                                                <constraint firstItem="uSf-MP-vKb" firstAttribute="top" secondItem="SI2-gq-abe" secondAttribute="top" constant="10" id="Dnw-gl-KxL"/>
+                                                <constraint firstItem="uSf-MP-vKb" firstAttribute="leading" secondItem="SI2-gq-abe" secondAttribute="leading" constant="20" id="Ohk-G7-bDa"/>
+                                                <constraint firstAttribute="bottom" secondItem="uSf-MP-vKb" secondAttribute="bottom" constant="5" id="eR5-cT-L8E"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cellView" destination="uSf-MP-vKb" id="PlM-Bp-bqx"/>
                                             <outlet property="itemImageView" destination="DZV-zA-U83" id="AzX-gt-cQe"/>
                                             <outlet property="itemTitleLabel" destination="vtg-aL-FNy" id="s0i-fi-3mv"/>
                                         </connections>
@@ -106,6 +120,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="oHS-m4-SYI" id="BVw-vl-VHv"/>
+                                    <outlet property="delegate" destination="oHS-m4-SYI" id="EyR-PU-xLC"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -149,7 +164,7 @@
             <objects>
                 <viewController storyboardIdentifier="SecondStepViewController" id="hhX-hF-aTo" customClass="SecondStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWN-Xn-DT2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step2" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOR-6a-lc2">
@@ -159,16 +174,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-xy-ycz">
-                                <rect key="frame" x="30" y="178" width="354" height="270"/>
+                                <rect key="frame" x="30" y="178.00000000000003" width="315" height="268.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4g-yQ-RLr">
-                                        <rect key="frame" x="0.0" y="0.0" width="29.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="29.666666666666668" height="19.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="장소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCZ-ku-rak">
-                                        <rect key="frame" x="0.0" y="30" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="29.666666666666657" width="315" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -177,13 +192,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhP-nR-37S">
-                                        <rect key="frame" x="0.0" y="70" width="29.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="69.666666666666657" width="29.666666666666668" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="날짜" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58v-GS-LgB">
-                                        <rect key="frame" x="0.0" y="100" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="99.333333333333314" width="315" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -192,13 +207,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제한인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVo-QR-qXo">
-                                        <rect key="frame" x="0.0" y="140" width="59" height="20"/>
+                                        <rect key="frame" x="0.0" y="139.33333333333331" width="59" height="19.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제한인원" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ER-g8-DjO">
-                                        <rect key="frame" x="0.0" y="170" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="169" width="315" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -207,13 +222,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소요시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUD-cu-aWS">
-                                        <rect key="frame" x="0.0" y="210" width="59" height="20"/>
+                                        <rect key="frame" x="0.0" y="209" width="59" height="19.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="소요시간" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bU-Lp-TeI">
-                                        <rect key="frame" x="0.0" y="240" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="238.66666666666669" width="315" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -230,13 +245,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품/ 서비스 등록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6X-gj-SQd">
-                                <rect key="frame" x="0.0" y="64" width="414" height="20"/>
+                                <rect key="frame" x="0.0" y="63.999999999999993" width="375" height="19.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POR-ok-bWM">
-                                <rect key="frame" x="369" y="59" width="25" height="25"/>
+                                <rect key="frame" x="330" y="59" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="PBP-fK-CWp"/>
                                     <constraint firstAttribute="height" constant="25" id="oUb-hG-vRz"/>
@@ -287,7 +302,7 @@
             <objects>
                 <viewController storyboardIdentifier="FirstStepViewController" id="W2K-W2-8gN" customClass="FirstStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZtS-gP-iP0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step1" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mCZ-Uz-z0T">
@@ -297,13 +312,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품/ 서비스 등록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSn-Vp-bFO">
-                                <rect key="frame" x="0.0" y="64" width="414" height="20"/>
+                                <rect key="frame" x="0.0" y="63.999999999999993" width="375" height="19.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXr-9j-eWd">
-                                <rect key="frame" x="369" y="59" width="25" height="25"/>
+                                <rect key="frame" x="330" y="59" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Qvd-Du-FkY"/>
                                     <constraint firstAttribute="width" constant="25" id="RSO-Om-b4I"/>
@@ -314,10 +329,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zlB-JH-Zoj">
-                                <rect key="frame" x="30" y="178" width="354" height="30"/>
+                                <rect key="frame" x="30" y="178" width="315" height="30"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상품/클래스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tmq-iK-OJX">
-                                        <rect key="frame" x="0.0" y="0.0" width="123.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -327,7 +342,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="카테고리" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jg1-Jp-4gV">
-                                        <rect key="frame" x="153.5" y="0.0" width="200.5" height="30"/>
+                                        <rect key="frame" x="153.33333333333337" y="0.0" width="161.66666666666663" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -338,16 +353,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ejw-Yw-eoD">
-                                <rect key="frame" x="30" y="238" width="354" height="200"/>
+                                <rect key="frame" x="30" y="238" width="315" height="199"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품/클래스명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu0-gU-suh">
-                                        <rect key="frame" x="0.0" y="0.0" width="93" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="93" height="19.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상품/클래스명" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zME-eY-CQq">
-                                        <rect key="frame" x="0.0" y="30" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="29.666666666666686" width="315" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -356,13 +371,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zp-a6-uc2">
-                                        <rect key="frame" x="0.0" y="70" width="29.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="69.666666666666686" width="29.666666666666668" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="가격" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcc-q4-fcz">
-                                        <rect key="frame" x="0.0" y="100" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="99.333333333333314" width="315" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -371,13 +386,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈카카오톡URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhO-hP-e2Y">
-                                        <rect key="frame" x="0.0" y="140" width="123.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="139.33333333333331" width="123.33333333333333" height="19.666666666666657"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                         <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오픈카카오톡URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-yS-i8n">
-                                        <rect key="frame" x="0.0" y="170" width="354" height="30"/>
+                                        <rect key="frame" x="0.0" y="169" width="315" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -438,7 +453,7 @@
             <objects>
                 <viewController storyboardIdentifier="ThirdStepViewController" id="vzk-CO-Lrm" customClass="ThirdStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KhK-AH-ydS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step3" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNm-Wr-8d3">
@@ -448,43 +463,43 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o70-ga-LES">
-                                <rect key="frame" x="35" y="200" width="349" height="150"/>
+                                <rect key="frame" x="35" y="200" width="310" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="aMg-80-anj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 이미지 업로드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqP-0y-D0c">
-                                <rect key="frame" x="30" y="178" width="127.5" height="20"/>
+                                <rect key="frame" x="30.000000000000007" y="178" width="127.66666666666669" height="20"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.90104717016220093" green="0.41761705279350281" blue="0.31367483735084534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X0d-Gg-JSa">
-                                <rect key="frame" x="30" y="382" width="354" height="380"/>
+                                <rect key="frame" x="30" y="382" width="315" height="296"/>
                                 <color key="backgroundColor" red="0.94547775886990693" green="0.94547775886990693" blue="0.94547775886990693" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="상품 / 서비스 부가설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wu-R3-Lda">
-                                <rect key="frame" x="35" y="360" width="151.5" height="20"/>
+                                <rect key="frame" x="35" y="360" width="151.66666666666666" height="20"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-HY-F6g">
-                                <rect key="frame" x="35" y="200" width="349" height="150"/>
+                                <rect key="frame" x="35" y="200" width="310" height="150"/>
                                 <connections>
                                     <action selector="openPhotoLibrary:" destination="vzk-CO-Lrm" eventType="touchUpInside" id="kZL-mS-jub"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상품/ 서비스 등록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9m-YK-2El">
-                                <rect key="frame" x="0.0" y="64" width="414" height="20"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="20"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="0.90104717020000002" green="0.4176170528" blue="0.31367483740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByY-a0-acg">
-                                <rect key="frame" x="369" y="59" width="25" height="25"/>
+                                <rect key="frame" x="330" y="59" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="iYd-HJ-QfY"/>
                                     <constraint firstAttribute="width" constant="25" id="kf6-bq-frF"/>
@@ -548,7 +563,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="slq-4h-VEo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vuO-HY-Wm6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
