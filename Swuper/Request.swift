@@ -62,7 +62,7 @@ func signUpRequest(emailAdress: String, name: String, password: String, image: U
             if let imgData = imageData {
                 print("img")
                 print(imgData)
-                MultipartFormData.append(imgData, withName: "profile_img",fileName: "profile_img", mimeType: "image/png")
+                MultipartFormData.append(imgData, withName: "profile_img",fileName: "img.png", mimeType: "image/png")
             }
             // 아이디,비밀번호,이름
             for (key, value) in parameters {
@@ -114,7 +114,7 @@ func itemPost(memberId: Int, productCategory: String, serviceCategory: String, n
             if let imgData = imageData {
                 print("img")
                 print(imgData)
-                MultipartFormData.append(imgData, withName: "multipartFile",fileName: "multipartFile", mimeType: "image/png")
+                MultipartFormData.append(imgData, withName: "multipartFile",fileName: "img.png", mimeType: "image/png")
             }
             // 아이디,비밀번호,이름
             for (key, value) in parameters {

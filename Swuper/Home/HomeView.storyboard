@@ -108,24 +108,33 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="a1L-Tt-Wfz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemcell" rowHeight="170" id="a1L-Tt-Wfz" customClass="ProductListTableViewCell" customModule="Swuper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a1L-Tt-Wfz" id="YJh-4k-RXm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="169.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shi-IW-H19">
-                                                    <rect key="frame" x="20" y="8" width="380" height="152"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="shi-IW-H19">
+                                                    <rect key="frame" x="99" y="43" width="216" height="83.5"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="shi-IW-H19" secondAttribute="bottom" constant="43" id="BsT-QX-cVR"/>
+                                                <constraint firstAttribute="trailing" secondItem="shi-IW-H19" secondAttribute="trailing" constant="99" id="MDs-ZP-sWM"/>
+                                                <constraint firstItem="shi-IW-H19" firstAttribute="leading" secondItem="YJh-4k-RXm" secondAttribute="leading" constant="99" id="iyi-2w-X0k"/>
+                                                <constraint firstItem="shi-IW-H19" firstAttribute="top" secondItem="YJh-4k-RXm" secondAttribute="top" constant="43" id="pqV-uE-xc0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="ItemImageView" destination="shi-IW-H19" id="roS-hS-K1j"/>
                                             <segue destination="w0e-Vi-mwl" kind="show" id="Iqp-9m-wfL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="m8V-Q4-kVb" id="VgV-gv-awN"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,6 +146,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R0K-va-a3E"/>
                     </view>
+                    <connections>
+                        <outlet property="listTableView" destination="lKB-yp-mSf" id="1YB-d6-HzV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ip-vD-8wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +166,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="tVd-Ra-iBl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="tVd-Ra-iBl" customClass="ProductDetailViewImageTableViewCell" customModule="Swuper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tVd-Ra-iBl" id="P7k-Jn-5gk">
@@ -325,4 +337,7 @@
             <point key="canvasLocation" x="1844" y="107.49625187406298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel" width="64" height="64"/>
+    </resources>
 </document>

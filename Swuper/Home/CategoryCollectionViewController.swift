@@ -9,8 +9,9 @@ class CategoryCollectionViewController: UIViewController {
     // MARk:- Properties
     let cell = "CategoryCell"
     let buttonBar = UIView()
-    var categoryImage: [String] = ["earring", "flower", "macaron", "paper", "candle", "ceramic"]
-    var categoryTitle: [String] = ["귀걸이", "꽃", "마카롱", "문구류", "캔들", "도자기"]
+    var productImage: [String] = ["earring", "flower", "macaron", "paper", "candle", "ceramic"]
+    var classImage: [String] = ["baking", "handmade", "music", "sport"]
+//    var categoryTitle: [String] = ["귀걸이", "꽃", "마카롱", "문구류", "캔들", "도자기"]
     
     // MARK:- LifeCycle
     override func viewDidLoad() {
@@ -53,6 +54,14 @@ class CategoryCollectionViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.buttonBar.frame.origin.x = (self.categorySegment.frame.width / CGFloat(self.categorySegment.numberOfSegments)) * CGFloat(self.categorySegment.selectedSegmentIndex)
         }
+        
+        if (sender.selectedSegmentIndex == 0) {
+            collectionView.reloadData()
+            print("상품")
+        } else {
+            collectionView.reloadData()
+            print("클래스")
+        }
     }
     /*
     // MARK: - Navigation
@@ -68,12 +77,28 @@ class CategoryCollectionViewController: UIViewController {
 // MARK:- DataSource
 extension CategoryCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryImage.count
+        if categorySegment.selectedSegmentIndex == 0 {
+            return productImage.count
+        }
+        else {
+            print(classImage.count)
+            return classImage.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
-        cell.categoryImageView.image = UIImage(named: categoryImage[indexPath.item])
-        return cell
+        if categorySegment.selectedSegmentIndex == 0 {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
+            cell.categoryImageView.image = UIImage(named: productImage[indexPath.item])
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
+            cell.categoryImageView.image = UIImage(named: classImage[indexPath.item])
+            return cell
+        }
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
+//        cell.categoryImageView.image = UIImage(named: productImage[indexPath.item])
+//        return cell
     }
 }
