@@ -118,7 +118,7 @@
                                                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-gs-3wc">
                                                     <rect key="frame" x="15" y="10" width="384" height="180"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swuper" translatesAutoresizingMaskIntoConstraints="NO" id="ckS-tn-z0p">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ckS-tn-z0p">
                                                             <rect key="frame" x="0.0" y="0.0" width="384" height="180"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teq-M8-yPd">
@@ -388,7 +388,6 @@
     </scenes>
     <resources>
         <image name="house_pink" width="25" height="25"/>
-        <image name="swuper" width="360" height="360"/>
         <image name="user" width="96" height="96"/>
     </resources>
 </document>

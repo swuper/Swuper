@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="oHS-m4-SYI" customClass="MyPageViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RYz-c2-NPi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="27U-ao-sCL">
@@ -68,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="275.33333333333326" width="375" height="502.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageCell" rowHeight="114" id="Dec-WQ-KkP" customClass="MyPageTableViewCell" customModule="Swuper" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPageCell" rowHeight="114" id="Dec-WQ-KkP" customClass="MyPageTableViewCell" customModule="Swuper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dec-WQ-KkP" id="SI2-gq-abe">
@@ -141,7 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My page" id="MPF-0f-2Cx"/>
                     <connections>
-                        <outlet property="MyPageTableView" destination="KQC-vs-Haw" id="Gte-g2-U5p"/>
+                        <outlet property="myPageTableView" destination="KQC-vs-Haw" id="Gte-g2-U5p"/>
                         <outlet property="userEmailLabel" destination="G6g-Px-iYX" id="Y62-lb-DiR"/>
                         <outlet property="userImageView" destination="8GD-Rf-Ajy" id="bwU-Gj-Zcl"/>
                         <outlet property="userNameLabel" destination="sKa-6y-UWE" id="KRs-c3-OWA"/>
@@ -164,7 +164,7 @@
             <objects>
                 <viewController storyboardIdentifier="SecondStepViewController" id="hhX-hF-aTo" customClass="SecondStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWN-Xn-DT2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step2" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOR-6a-lc2">
@@ -302,7 +302,7 @@
             <objects>
                 <viewController storyboardIdentifier="FirstStepViewController" id="W2K-W2-8gN" customClass="FirstStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZtS-gP-iP0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step1" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mCZ-Uz-z0T">
@@ -453,7 +453,7 @@
             <objects>
                 <viewController storyboardIdentifier="ThirdStepViewController" id="vzk-CO-Lrm" customClass="ThirdStepViewController" customModule="Swuper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KhK-AH-ydS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step3" textAlignment="natural" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNm-Wr-8d3">
@@ -563,7 +563,7 @@
                     <tabBarItem key="tabBarItem" title="MyPage" image="mypage_pink" id="slq-4h-VEo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vuO-HY-Wm6">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="600" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

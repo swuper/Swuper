@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class MyPageViewController: UIViewController {
     
@@ -6,9 +7,10 @@ class MyPageViewController: UIViewController {
     let cell = "MyPageCell"
     var itemResponse : [[String : Any]] = []
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    var count = 0
     
     // MARK:- IBOulet
-    @IBOutlet var MyPageTableView: UITableView!
+    @IBOutlet var myPageTableView: UITableView!
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var userEmailLabel: UILabel!
@@ -16,24 +18,19 @@ class MyPageViewController: UIViewController {
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.MyPageTableView.separatorStyle = .none
+        self.myPageTableView.separatorStyle = .none
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)]
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
-        DispatchQueue.global().async {
-            guard let imageURL: URL = URL(string: UserInformation.shared.profileImg ?? "") else { return }
-            guard let imageData: Data = try? Data(contentsOf: imageURL) else { return }
-            DispatchQueue.main.async {
-                self.userImageView.image = UIImage(data: imageData)
-            }
-        }
+//        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
+        
+        guard let imgURL = UserInformation.shared.profileImg else { return }
+        self.userImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: imgURL)!, cacheKey: imgURL))
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.gray
         view.addSubview(activityIndicator)
         userNameLabel.text = UserInformation.shared.username
         userEmailLabel.text = UserInformation.shared.email
-        MyPageTableView.reloadData()
+        myPageTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
@@ -41,24 +38,27 @@ class MyPageViewController: UIViewController {
         guard let memberId = UserInformation.shared.memberId else { return }
         activityIndicator.startAnimating()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
         userItemRequest(token: token, memberId: memberId)
-        MyPageTableView.reloadData()
+        myPageTableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         print("viewDidAppear")
         DispatchQueue.main.async {
-            self.MyPageTableView.reloadData()
+            self.myPageTableView.reloadData()
         }
     }
 
     // MARK:- Function
     @objc func didRecieveUserItemNotification(_ noti: Notification) {
+        count = count + 1
+        print(count)
         guard let response = noti.userInfo?["response"] as? [[String:Any]] else { return }
         print("=================noti===================")
         itemResponse = response
         print(response)
         DispatchQueue.main.async {
-            self.MyPageTableView.reloadData()
+            self.myPageTableView.reloadData()
             self.activityIndicator.stopAnimating()
         }
     }
@@ -88,20 +88,10 @@ extension MyPageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = MyPageTableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as? MyPageTableViewCell else { return UITableViewCell() }
+        guard let cell = myPageTableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as? MyPageTableViewCell else { return UITableViewCell() }
         guard let name = itemResponse[indexPath.row]["name"] as? String else { return UITableViewCell() }
         guard let imgURL = itemResponse[indexPath.row]["img"] as? String else { return UITableViewCell() }
-        DispatchQueue.global().async {
-            guard let imageURL: URL = URL(string: imgURL) else { return }
-            guard let imageData: Data = try? Data(contentsOf: imageURL) else { return }
-            DispatchQueue.main.async {
-                if let index: IndexPath = tableView.indexPath(for: cell) {
-                    if index.row == indexPath.row {
-                        cell.itemImageView.image = UIImage(data: imageData)
-                    }
-                }
-            }
-        }
+        cell.itemImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: imgURL)!, cacheKey: imgURL))
         cell.itemTitleLabel.text = name
         return cell
     }
