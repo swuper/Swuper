@@ -9,6 +9,7 @@ class FirstStepViewController: UIViewController {
     let itemClass: [String] = ["","상품", "클래스"]
     let itemCategory: [String] = ["","꽃", "문구류", "수제먹거리", "악세서리", "캔들,디퓨저", "공예품"]
     let classCateogry: [String] = ["", "음악", "스포츠", "교육"]
+    let dic: [String:String] = ["":"", "상품":"PRODUCT", "클래스":"SERVICE", "꽃":"FLOWER", "수제먹거리":"FOOD", "문구류":"STATIONARY", "악세서리":"ACCESSORY", "캔들,디퓨저":"BEAUTY", "공예품":"HANDCRAFT", "음악":"MUSIC", "스포츠":"SPORTS", "교육":"EDU"]
     
     // MARK:- IBOulet
     @IBOutlet var itemClassTextField: UITextField!
@@ -66,10 +67,13 @@ extension FirstStepViewController: UITextFieldDelegate {
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let itemClassText = itemClassTextField.text {
-            ItemInformation.firstPage.serviceCategory = itemClassText
+            ItemInformation.firstPage.type = dic[itemClassText]
+            print(dic[itemClassText])
+            //ItemInformation.firstPage.serviceCategory = dic[itemClassText]
         }
         if let categoryText = categoryTextField.text {
-            ItemInformation.firstPage.productCategory = categoryText
+            ItemInformation.firstPage.category = dic[categoryText]
+            print(dic[categoryText])
         }
         if let titleText = titleTextField.text {
             ItemInformation.firstPage.name = titleText

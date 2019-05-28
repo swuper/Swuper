@@ -89,11 +89,11 @@ func signUpRequest(emailAdress: String, name: String, password: String, image: U
 }
 
 // 상품 등록
-func itemPost(memberId: Int, productCategory: String, serviceCategory: String, name: String, price: String, openChatHref: String, place: String, startAt: String, limitMemberNumber: Int, spendTime: String, image: UIImage, text: String, token: String) {
+func itemPost(memberId: Int, category: String, type: String, name: String, price: String, openChatHref: String, place: String, startAt: String, limitMemberNumber: Int, spendTime: String, image: UIImage, text: String, token: String) {
     let url = "http://3.16.157.244:8090/members/" + String(memberId) + "/products"
     let parameters : [String:Any] = [
-        "category" : "FOOD",
-        "type" : "PRODUCT",
+        "category" : category,
+        "type" : type,
         "name" : name,
         "price" : price,
         "openChatHref" : openChatHref,

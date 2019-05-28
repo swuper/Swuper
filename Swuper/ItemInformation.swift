@@ -8,8 +8,8 @@ struct ItemInformation {
     static var flag = Flag()
     
     struct FirstPage {
-        var productCategory: String?
-        var serviceCategory: String?
+        var category: String?
+        var type: String?
         var price: String?
         var name: String?
         var openChatHref: String?

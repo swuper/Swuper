@@ -34,7 +34,7 @@ class ThirdStepViewController: UIViewController {
             } else {
                 guard let memberId = UserInformation.shared.memberId else { return }
                 guard let token = UserInformation.shared.token else { return }
-                itemPost(memberId: memberId, productCategory: (ItemInformation.firstPage.productCategory)!, serviceCategory: (ItemInformation.firstPage.serviceCategory)!, name: (ItemInformation.firstPage.name)!, price: (ItemInformation.firstPage.price)!, openChatHref: (ItemInformation.firstPage.openChatHref)!, place: (ItemInformation.secondPage.place)!, startAt: (ItemInformation.secondPage.startAt)!, limitMemberNumber: (ItemInformation.secondPage.limitMemberNumber)!, spendTime: (ItemInformation.secondPage.spendTime)!, image: img, text: info, token: token)
+                itemPost(memberId: memberId, category: (ItemInformation.firstPage.category)!, type: (ItemInformation.firstPage.type)!, name: (ItemInformation.firstPage.name)!, price: (ItemInformation.firstPage.price)!, openChatHref: (ItemInformation.firstPage.openChatHref)!, place: (ItemInformation.secondPage.place)!, startAt: (ItemInformation.secondPage.startAt)!, limitMemberNumber: (ItemInformation.secondPage.limitMemberNumber)!, spendTime: (ItemInformation.secondPage.spendTime)!, image: img, text: info, token: token)
                 dismiss(animated: true, completion: nil)
             }
         } else {
