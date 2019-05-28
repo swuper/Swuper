@@ -52,7 +52,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="categoryImageView" destination="rel-sG-iJX" id="v2n-Pw-Xxv"/>
-                                            <segue destination="m8V-Q4-kVb" kind="show" id="crI-bJ-xls"/>
+                                            <segue destination="m8V-Q4-kVb" kind="show" identifier="itemlist" id="crI-bJ-xls"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -108,26 +108,75 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemcell" rowHeight="170" id="a1L-Tt-Wfz" customClass="ProductListTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="170"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemcell" rowHeight="210" id="a1L-Tt-Wfz" customClass="ProductListTableViewCell" customModule="Swuper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="210"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a1L-Tt-Wfz" id="YJh-4k-RXm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="169.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a1L-Tt-Wfz" id="YJh-4k-RXm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="209.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="shi-IW-H19">
-                                                    <rect key="frame" x="99" y="43" width="216" height="83.5"/>
-                                                </imageView>
+                                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-gs-3wc">
+                                                    <rect key="frame" x="15" y="10" width="384" height="180"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swuper" translatesAutoresizingMaskIntoConstraints="NO" id="ckS-tn-z0p">
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="180"/>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teq-M8-yPd">
+                                                            <rect key="frame" x="0.0" y="117" width="384" height="63"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fob-9R-ai1">
+                                                                    <rect key="frame" x="10" y="10" width="316" height="43"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Ggn-GT-aZS">
+                                                                    <rect key="frame" x="336" y="15" width="33" height="33"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="33" id="GdH-fx-0l3"/>
+                                                                        <constraint firstAttribute="width" secondItem="Ggn-GT-aZS" secondAttribute="height" multiplier="1:1" id="jbO-2R-1AV"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="0.70050299657534243" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="fob-9R-ai1" firstAttribute="leading" secondItem="teq-M8-yPd" secondAttribute="leading" constant="10" id="7ok-gb-a6s"/>
+                                                                <constraint firstAttribute="height" constant="63" id="8Mx-5T-sWM"/>
+                                                                <constraint firstAttribute="bottom" secondItem="fob-9R-ai1" secondAttribute="bottom" constant="10" id="CEO-dQ-Qok"/>
+                                                                <constraint firstItem="fob-9R-ai1" firstAttribute="top" secondItem="teq-M8-yPd" secondAttribute="top" constant="10" id="JIp-B9-BXX"/>
+                                                                <constraint firstItem="Ggn-GT-aZS" firstAttribute="centerY" secondItem="teq-M8-yPd" secondAttribute="centerY" id="L4p-n0-Ks8"/>
+                                                                <constraint firstItem="Ggn-GT-aZS" firstAttribute="leading" secondItem="fob-9R-ai1" secondAttribute="trailing" constant="10" id="Yol-dV-0i0"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Ggn-GT-aZS" secondAttribute="trailing" constant="15" id="sbe-lC-Foq"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="ckS-tn-z0p" secondAttribute="bottom" id="FfH-4V-ska"/>
+                                                        <constraint firstItem="teq-M8-yPd" firstAttribute="bottom" secondItem="ckS-tn-z0p" secondAttribute="bottom" id="JLI-xL-d0n"/>
+                                                        <constraint firstItem="ckS-tn-z0p" firstAttribute="top" secondItem="gi9-gs-3wc" secondAttribute="top" id="Ln2-HP-Nsb"/>
+                                                        <constraint firstItem="ckS-tn-z0p" firstAttribute="leading" secondItem="gi9-gs-3wc" secondAttribute="leading" id="YNl-3b-rNX"/>
+                                                        <constraint firstItem="ckS-tn-z0p" firstAttribute="height" secondItem="gi9-gs-3wc" secondAttribute="height" id="heO-kf-bKO"/>
+                                                        <constraint firstAttribute="height" constant="180" id="mMq-BX-x9i"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ckS-tn-z0p" secondAttribute="trailing" id="sNG-PC-wOy"/>
+                                                        <constraint firstItem="teq-M8-yPd" firstAttribute="leading" secondItem="gi9-gs-3wc" secondAttribute="leading" id="tD1-Xn-ilU"/>
+                                                        <constraint firstItem="teq-M8-yPd" firstAttribute="width" secondItem="gi9-gs-3wc" secondAttribute="width" id="teV-Ce-pK9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="teq-M8-yPd" secondAttribute="trailing" id="xZ9-xW-UBw"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="shi-IW-H19" secondAttribute="bottom" constant="43" id="BsT-QX-cVR"/>
-                                                <constraint firstAttribute="trailing" secondItem="shi-IW-H19" secondAttribute="trailing" constant="99" id="MDs-ZP-sWM"/>
-                                                <constraint firstItem="shi-IW-H19" firstAttribute="leading" secondItem="YJh-4k-RXm" secondAttribute="leading" constant="99" id="iyi-2w-X0k"/>
-                                                <constraint firstItem="shi-IW-H19" firstAttribute="top" secondItem="YJh-4k-RXm" secondAttribute="top" constant="43" id="pqV-uE-xc0"/>
+                                                <constraint firstAttribute="trailing" secondItem="gi9-gs-3wc" secondAttribute="trailing" constant="15" id="1gX-VF-t9Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="gi9-gs-3wc" secondAttribute="bottom" constant="5" id="2rc-4A-vzl"/>
+                                                <constraint firstItem="gi9-gs-3wc" firstAttribute="leading" secondItem="YJh-4k-RXm" secondAttribute="leading" constant="15" id="ZhY-2f-x7A"/>
+                                                <constraint firstItem="gi9-gs-3wc" firstAttribute="top" secondItem="YJh-4k-RXm" secondAttribute="top" constant="10" id="dWO-gB-Ucy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ItemImageView" destination="shi-IW-H19" id="roS-hS-K1j"/>
+                                            <outlet property="backView" destination="gi9-gs-3wc" id="p3g-PW-95a"/>
+                                            <outlet property="informationBackView" destination="teq-M8-yPd" id="6Ok-cS-KAV"/>
+                                            <outlet property="itemImage" destination="ckS-tn-z0p" id="1or-4Q-JqU"/>
+                                            <outlet property="itemLabel" destination="fob-9R-ai1" id="j4q-qo-I3Y"/>
+                                            <outlet property="userImageView" destination="Ggn-GT-aZS" id="nBb-G0-rms"/>
                                             <segue destination="w0e-Vi-mwl" kind="show" id="Iqp-9m-wfL"/>
                                         </connections>
                                     </tableViewCell>
@@ -338,7 +387,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cancel" width="24" height="24"/>
-        <image name="house_pink" width="24" height="24"/>
+        <image name="house_pink" width="25" height="25"/>
+        <image name="swuper" width="360" height="360"/>
+        <image name="user" width="96" height="96"/>
     </resources>
 </document>

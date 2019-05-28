@@ -171,3 +171,5 @@ func allItemRequest() {
 func detailItemRequest() {
     // 상품 상세 설명 
 }
+
+

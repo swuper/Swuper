@@ -1,20 +1,20 @@
 PODS:
   - Alamofire (4.8.2)
-  - iOSDropDown (0.2.9)
+  - Kingfisher (5.5.0)
 
 DEPENDENCIES:
   - Alamofire
-  - iOSDropDown
+  - Kingfisher
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - iOSDropDown
+    - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  iOSDropDown: 7b6d6da416621747875b466804f661f31991e74c
+  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
 
-PODFILE CHECKSUM: 016119c181bb660e41c6f9acbe9d784c475f2b77
+PODFILE CHECKSUM: 83c767665d396e601aa77db32a29f83b5654837c
 
 COCOAPODS: 1.6.2

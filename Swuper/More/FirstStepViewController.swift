@@ -8,8 +8,8 @@ class FirstStepViewController: UIViewController {
     let categoryPicker = UIPickerView()
     let itemClass: [String] = ["","상품", "클래스"]
     let itemCategory: [String] = ["","꽃", "문구류", "수제먹거리", "악세서리", "캔들,디퓨저", "공예품"]
-    let classCateogry: [String] = ["", "음악", "스포츠", "교육"]
-    let dic: [String:String] = ["":"", "상품":"PRODUCT", "클래스":"SERVICE", "꽃":"FLOWER", "수제먹거리":"FOOD", "문구류":"STATIONARY", "악세서리":"ACCESSORY", "캔들,디퓨저":"BEAUTY", "공예품":"HANDCRAFT", "음악":"MUSIC", "스포츠":"SPORTS", "교육":"EDU"]
+    let classCateogry: [String] = ["", "베이킹 클래스", "핸드메이드 클래스", "음악", "스포츠"]
+    let dic: [String:String] = ["":"", "상품":"PRODUCT", "클래스":"SERVICE", "꽃":"FLOWER", "수제먹거리":"FOOD", "문구류":"STATIONARY", "악세서리":"ACCESSORY", "캔들,디퓨저":"BEAUTY", "공예품":"HANDCRAFT", "음악":"MUSIC", "스포츠":"SPORTS", "베이킹 클래스":"EDU", "핸드메이드 클래스":"HANDMADE"]
     
     // MARK:- IBOulet
     @IBOutlet var itemClassTextField: UITextField!

@@ -11,6 +11,7 @@ class CategoryCollectionViewController: UIViewController {
     let buttonBar = UIView()
     var productImage: [String] = ["earring", "flower", "macaron", "paper", "candle", "ceramic"]
     var classImage: [String] = ["baking", "handmade", "music", "sport"]
+    let dic: [String:String] = ["flower":"FLOWER", "macaron":"FOOD", "paper":"STATIONARY", "earring":"ACCESSORY", "candle":"BEAUTY", "ceramic":"HANDCRAFT", "music":"MUSIC", "sport":"SPORTS", "baking":"EDU", "handmade":"HANDMADE"]
 //    var categoryTitle: [String] = ["귀걸이", "꽃", "마카롱", "문구류", "캔들", "도자기"]
     
     // MARK:- LifeCycle
@@ -63,15 +64,24 @@ class CategoryCollectionViewController: UIViewController {
             print("클래스")
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "itemlist" {
+            guard let desVC: ProductListTableViewController = segue.destination as? ProductListTableViewController else { return }
+            guard let cell = self.collectionView.indexPathsForSelectedItems?.first?.item else { return }
+            if categorySegment.selectedSegmentIndex == 0 {
+                let cate = productImage[cell]
+                desVC.category = dic[cate]
+            } else {
+                let cate = classImage[cell]
+                desVC.category = dic[cate]
+            }
+            
+        }
     }
-    */
 }
 
 // MARK:- DataSource
@@ -97,8 +107,5 @@ extension CategoryCollectionViewController: UICollectionViewDataSource {
             cell.categoryImageView.image = UIImage(named: classImage[indexPath.item])
             return cell
         }
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
-//        cell.categoryImageView.image = UIImage(named: productImage[indexPath.item])
-//        return cell
     }
 }

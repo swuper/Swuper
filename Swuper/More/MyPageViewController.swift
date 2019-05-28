@@ -61,8 +61,8 @@ class MyPageViewController: UIViewController {
             self.MyPageTableView.reloadData()
             self.activityIndicator.stopAnimating()
         }
-        
     }
+    
     @objc func didRecieveErrorNotification(_ noti: Notification) {
         let alertController = UIAlertController(title: "알림", message: "데이터를 가져오지 못하였습니다", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
