@@ -556,11 +556,11 @@
             </objects>
             <point key="canvasLocation" x="5557.971014492754" y="1246.875"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--MyPage-->
         <scene sceneID="iSh-My-ioT">
             <objects>
                 <navigationController storyboardIdentifier="MoreViewController" automaticallyAdjustsScrollViewInsets="NO" id="PhL-Nc-yQq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="slq-4h-VEo"/>
+                    <tabBarItem key="tabBarItem" title="MyPage" image="mypage_pink" id="slq-4h-VEo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vuO-HY-Wm6">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -577,7 +577,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cancel" width="64" height="64"/>
-        <image name="uploadButton" width="277" height="81"/>
+        <image name="cancel" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="mypage_pink" width="25" height="25"/>
+        <image name="uploadButton" width="202" height="52.666667938232422"/>
     </resources>
 </document>

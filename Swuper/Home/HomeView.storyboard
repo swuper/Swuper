@@ -321,7 +321,7 @@
         <scene sceneID="yKK-0x-bwp">
             <objects>
                 <navigationController storyboardIdentifier="HoneVIewController" automaticallyAdjustsScrollViewInsets="NO" id="467-z6-ctS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="o7v-Ap-eOp"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house_pink" id="o7v-Ap-eOp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Efb-DY-Ghh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -338,6 +338,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cancel" width="64" height="64"/>
+        <image name="cancel" width="24" height="24"/>
+        <image name="house_pink" width="24" height="24"/>
     </resources>
 </document>
