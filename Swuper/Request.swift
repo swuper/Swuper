@@ -200,8 +200,28 @@ func likeRequest() {
     ]
 }
 
-func unlikeRequest() {
+func unlikeRequest(token: String, memberId: Int, id: Int) {
     // 좋아요 취소
+    //http://3.16.157.244:8090/products/2/unlike?memberId=1
+    let parameters = [
+        "memberId:" : memberId,
+    ]
+    let headers = [
+        "Authorization" : "Bearer " + token
+    ]
+    
+    let url = "http://3.16.157.244:8090/products/" + String(id) + "/unlike?memberId=" + String(memberId)
+    Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        switch response.result {
+        case .success:
+            print("success")
+            print("===================")
+        case .failure:
+            print("failure")
+            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
+            print(response)
+        }
+    }
 }
 
 func detailItemRequest() {

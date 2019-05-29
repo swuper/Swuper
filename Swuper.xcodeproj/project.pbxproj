@@ -31,6 +31,7 @@
 		991AE825228C458300E49D3A /* SecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AE824228C458300E49D3A /* SecondStepViewController.swift */; };
 		991AE827228C459100E49D3A /* ThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991AE826228C459100E49D3A /* ThirdStepViewController.swift */; };
 		992FB03D2291092100750C51 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FB03C2291092100750C51 /* UserInformation.swift */; };
+		994C669D229EBAE4009F8812 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994C669C229EBAE4009F8812 /* Protocol.swift */; };
 		9993C2BE225DB41100A6B851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BD225DB41100A6B851 /* AppDelegate.swift */; };
 		9993C2C0225DB41100A6B851 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993C2BF225DB41100A6B851 /* LoginViewController.swift */; };
 		9993C2C3225DB41200A6B851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9993C2C1225DB41200A6B851 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		991AE824228C458300E49D3A /* SecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondStepViewController.swift; sourceTree = "<group>"; };
 		991AE826228C459100E49D3A /* ThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdStepViewController.swift; sourceTree = "<group>"; };
 		992FB03C2291092100750C51 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		994C669C229EBAE4009F8812 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		9993C2BA225DB41100A6B851 /* Swuper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swuper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9993C2BD225DB41100A6B851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9993C2BF225DB41100A6B851 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				9993C2BD225DB41100A6B851 /* AppDelegate.swift */,
 				990972DC227AD5C700DAA3D6 /* Request.swift */,
 				99077FE42290139300E80BA1 /* Helvetica-Bold-Font.ttf */,
+				994C669C229EBAE4009F8812 /* Protocol.swift */,
 				991547E92296804100A9F37C /* ItemInformation.swift */,
 				99090B35229D803000D43446 /* API.swift */,
 				992FB03C2291092100750C51 /* UserInformation.swift */,
@@ -340,6 +343,7 @@
 				992FB03D2291092100750C51 /* UserInformation.swift in Sources */,
 				990972CC227AC0F700DAA3D6 /* CategoryCollectionViewController.swift in Sources */,
 				991AE821228C451900E49D3A /* RegisterPageViewController.swift in Sources */,
+				994C669D229EBAE4009F8812 /* Protocol.swift in Sources */,
 				990972DD227AD5C700DAA3D6 /* Request.swift in Sources */,
 				991AE825228C458300E49D3A /* SecondStepViewController.swift in Sources */,
 				990972D6227AC1F800DAA3D6 /* MyPageViewController.swift in Sources */,

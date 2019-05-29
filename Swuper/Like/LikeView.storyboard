@@ -32,7 +32,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guk-bg-gbM">
                                                     <rect key="frame" x="15" y="10" width="345" height="180"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swuper" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-Fa-TDo">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-Fa-TDo">
                                                             <rect key="frame" x="0.0" y="0.0" width="345" height="180"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSA-uN-Dx7">
@@ -69,18 +69,26 @@
                                                                 <constraint firstAttribute="height" constant="25" id="niI-rp-XnP"/>
                                                                 <constraint firstAttribute="width" constant="25" id="ofg-cX-urf"/>
                                                             </constraints>
-                                                            <state key="normal" image="like_pink"/>
+                                                            <state key="normal" image="likeButton"/>
                                                         </button>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5Z-Pn-T6f">
+                                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="180" id="0bb-T8-TwH"/>
                                                         <constraint firstAttribute="trailing" secondItem="dkU-Fa-TDo" secondAttribute="trailing" id="5H1-6j-ZBv"/>
+                                                        <constraint firstItem="U5Z-Pn-T6f" firstAttribute="leading" secondItem="guk-bg-gbM" secondAttribute="leading" constant="8" id="6gE-1g-lqr"/>
                                                         <constraint firstItem="dkU-Fa-TDo" firstAttribute="top" secondItem="guk-bg-gbM" secondAttribute="top" id="Ah2-lQ-0Db"/>
                                                         <constraint firstItem="MSA-uN-Dx7" firstAttribute="leading" secondItem="dkU-Fa-TDo" secondAttribute="leading" id="Ocs-xv-kGO"/>
                                                         <constraint firstAttribute="trailing" secondItem="yrB-cx-1AK" secondAttribute="trailing" constant="10" id="Pgu-p0-pku"/>
                                                         <constraint firstItem="yrB-cx-1AK" firstAttribute="top" secondItem="guk-bg-gbM" secondAttribute="top" constant="10" id="Wye-r1-Kd9"/>
                                                         <constraint firstItem="MSA-uN-Dx7" firstAttribute="width" secondItem="guk-bg-gbM" secondAttribute="width" id="XNW-jQ-WXm"/>
                                                         <constraint firstItem="dkU-Fa-TDo" firstAttribute="leading" secondItem="guk-bg-gbM" secondAttribute="leading" id="XVO-O3-lh9"/>
+                                                        <constraint firstItem="U5Z-Pn-T6f" firstAttribute="top" secondItem="guk-bg-gbM" secondAttribute="top" constant="8" id="pKs-di-fWn"/>
                                                         <constraint firstItem="MSA-uN-Dx7" firstAttribute="bottom" secondItem="dkU-Fa-TDo" secondAttribute="bottom" id="txH-Pc-EM8"/>
                                                         <constraint firstItem="dkU-Fa-TDo" firstAttribute="height" secondItem="guk-bg-gbM" secondAttribute="height" id="yKB-nb-Wg0"/>
                                                     </constraints>
@@ -95,6 +103,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="backView" destination="guk-bg-gbM" id="abg-5D-She"/>
+                                            <outlet property="idLabel" destination="U5Z-Pn-T6f" id="BdQ-s8-5Ja"/>
                                             <outlet property="informationBackView" destination="MSA-uN-Dx7" id="XPo-hX-BZY"/>
                                             <outlet property="itemImageView" destination="dkU-Fa-TDo" id="wb6-OT-x0j"/>
                                             <outlet property="itemLabel" destination="IZG-hV-FPD" id="5Md-Q7-X93"/>
@@ -147,8 +156,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="likeButton" width="30" height="30"/>
         <image name="like_pink" width="25" height="25"/>
-        <image name="swuper" width="360" height="360"/>
         <image name="user" width="96" height="96"/>
     </resources>
 </document>
