@@ -20,7 +20,6 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
         self.myPageTableView.separatorStyle = .none
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)]
-//        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
         
         guard let imgURL = UserInformation.shared.profileImg else { return }
         self.userImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: imgURL)!, cacheKey: imgURL))
@@ -30,7 +29,6 @@ class MyPageViewController: UIViewController {
         view.addSubview(activityIndicator)
         userNameLabel.text = UserInformation.shared.username
         userEmailLabel.text = UserInformation.shared.email
-        myPageTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
@@ -40,7 +38,9 @@ class MyPageViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
         userItemRequest(token: token, memberId: memberId)
-        myPageTableView.reloadData()
+        DispatchQueue.main.async {
+            self.myPageTableView.reloadData()
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         print("viewDidAppear")
@@ -97,4 +97,8 @@ extension MyPageViewController: UITableViewDataSource {
     }
 }
 
-
+extension MyPageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        self.myPageTableView.deselectRow(at: indexPath, animated: false)
+    }
+}

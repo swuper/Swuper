@@ -65,9 +65,7 @@ class CategoryCollectionViewController: UIViewController {
         }
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemlist" {
             guard let desVC: ProductListTableViewController = segue.destination as? ProductListTableViewController else { return }
@@ -78,8 +76,7 @@ class CategoryCollectionViewController: UIViewController {
             } else {
                 let cate = classImage[cell]
                 desVC.category = dic[cate]
-            }
-            
+            }    
         }
     }
 }
@@ -107,5 +104,11 @@ extension CategoryCollectionViewController: UICollectionViewDataSource {
             cell.categoryImageView.image = UIImage(named: classImage[indexPath.item])
             return cell
         }
+    }
+}
+
+extension CategoryCollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        self.collectionView.deselectItem(at: indexPath, animated: false)
     }
 }

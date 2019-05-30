@@ -109,11 +109,13 @@
                                             <outlet property="itemLabel" destination="IZG-hV-FPD" id="5Md-Q7-X93"/>
                                             <outlet property="likeButton" destination="yrB-cx-1AK" id="WI0-em-Rir"/>
                                             <outlet property="userImageView" destination="zVW-25-t6H" id="gSk-WC-9fo"/>
+                                            <segue destination="M9M-dQ-zpO" kind="show" id="UQN-IF-1u3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="bOw-8B-VML" id="wnT-3Y-FWZ"/>
+                                    <outlet property="delegate" destination="bOw-8B-VML" id="Uon-kk-vOs"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -134,6 +136,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVq-Xf-mcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2781.5999999999999" y="770.46476761619192"/>
+        </scene>
+        <!--ProductDetailView-->
+        <scene sceneID="EU9-0X-YnW">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ProductDetailView" storyboardName="ProductDetailView" id="M9M-dQ-zpO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wnh-BO-3hf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3525" y="709"/>
         </scene>
         <!--Like-->
         <scene sceneID="NC4-6e-DzZ">

@@ -23,6 +23,7 @@ class ProductListTableViewController: UIViewController {
         self.listTableView.separatorStyle = .none
         listTableView.delegate = self
         listTableView.dataSource = self
+        self.title = category
         guard let token = UserInformation.shared.token else { return }
         guard let categoty = self.category else { return }
         Api.shared.token = token
@@ -31,8 +32,12 @@ class ProductListTableViewController: UIViewController {
             Api.shared.ProductGetPage(viewcontroller: self, page: 0)
         }
     }
-    
-
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            Api.shared.ProductGetPage(viewcontroller: self, page: 0)
+            self.listTableView.reloadData()
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -62,7 +67,8 @@ extension ProductListTableViewController: UITableViewDataSource {
     }
 }
 
-
 extension ProductListTableViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.listTableView.deselectRow(at: indexPath, animated: false)
+    }
 }

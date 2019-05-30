@@ -186,6 +186,9 @@ func getAllItemRequest(token: String) {
     
 }
 
+func detailItemRequest() {
+    // 상품 상세 설명
+}
 
 
 func likeRequest() {
@@ -223,9 +226,3 @@ func unlikeRequest(token: String, memberId: Int, id: Int) {
         }
     }
 }
-
-func detailItemRequest() {
-    // 상품 상세 설명 
-}
-
-

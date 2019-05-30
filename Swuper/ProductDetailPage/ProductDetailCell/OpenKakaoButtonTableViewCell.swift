@@ -1,15 +1,9 @@
-//
-//  ProductDetailViewTableViewCell.swift
-//  Swuper
-//
-//  Created by 박주현 on 27/05/2019.
-//  Copyright © 2019 박주현. All rights reserved.
-//
-
 import UIKit
 
-class ProductDetailViewImageTableViewCell: UITableViewCell {
+class OpenKakaoButtonTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var openKakaoButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

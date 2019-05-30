@@ -78,6 +78,13 @@ extension LikeListTableViewController: UITableViewDataSource {
     }
 }
 
+extension LikeListTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        self.likeTableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+
 extension LikeListTableViewController: LikeCellDelegate {
     func likeCell(_ cell: LikeListTableTableViewCell, didTaplikeButton: UIButton) {
         guard let token = UserInformation.shared.token else { return }
