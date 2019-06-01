@@ -6,6 +6,7 @@ let DidRecieveExceptionNotification: Notification.Name = Notification.Name("DidR
 let DidRecieveUserItemNotification: Notification.Name = Notification.Name("DidRecieveUserItemNotification")
 let DidRecieveErrorNotification: Notification.Name = Notification.Name("DidRecieveErrorNotification")
 let DidRecieveAllItemNotification: Notification.Name = Notification.Name("DidRecieveAllItemNotification")
+let DidRecieveCategoryItemNotification: Notification.Name = Notification.Name("DidRecieveCategoryItemNotification")
 
 // 로그인
 func LoginPost(id: String, password: String) {
@@ -75,10 +76,6 @@ func signUpRequest(emailAdress: String, name: String, password: String, image: U
         case .success(let upload, _, _):
             upload.responseJSON { MultipartFormData in
                 print("success")
-                print(MultipartFormData.result.value)
-                print("--------------------------------")
-                print(MultipartFormData.response)
-                print("--------------------------------")
                 print(MultipartFormData.response?.statusCode)
             }
         case .failure(let encodingError):
@@ -129,7 +126,6 @@ func itemPost(memberId: Int, category: String, type: String, name: String, price
         case .success(let upload, _, _):
             upload.responseJSON { MultipartFormData in
                 print("post-success")
-                print(MultipartFormData.result.value)
             }
         case .failure(let encodingError):
             print("failure")
@@ -139,8 +135,8 @@ func itemPost(memberId: Int, category: String, type: String, name: String, price
     }
 }
 
+// 사용자 상품 목록 요청
 func userItemRequest(token: String, memberId: Int) {
-    // 사용자 상품 목록 요청
     let parameters = [
         "page" : 0
     ]
@@ -163,6 +159,7 @@ func userItemRequest(token: String, memberId: Int) {
     }
 }
 
+// 모든 상품 요청
 func getAllItemRequest(token: String) {
     //http://3.16.157.244:8090/products/getAll
     let headers = [
@@ -183,36 +180,64 @@ func getAllItemRequest(token: String) {
             print(response)
         }
     }
-    
 }
 
-func detailItemRequest() {
-    // 상품 상세 설명
+// 카테고리별 상품 요청
+func getCategoryItemRequest(token: String, category: String){
+    let headers = [
+        "Authorization" : "Bearer " + token
+    ]
+    //http://3.16.157.244:8090/products/get/category?category=FLOWER&page=0
+    let url = "http://3.16.157.244:8090/products/get/category?category=" + category + "&page=0"
+    Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        switch response.result {
+        case .success:
+            print("success")
+            guard let response = response.result.value as? [String:Any] else { return }
+            guard let res = response["response"] as? [[String: Any]] else { return }
+            print("===================")
+            NotificationCenter.default.post(name: DidRecieveCategoryItemNotification, object: nil, userInfo: ["response" : res])
+        case .failure:
+            print("failure")
+            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
+            print(response)
+        }
+    }
 }
 
-
-func likeRequest() {
-    // 좋아요
-    // /products/{id}/like
+// 좋아요
+func likeRequest(token: String, memberId: Int, id: Int) {
     //http://3.16.157.244:8090/products/5/like?member_id=1
     let parameters = [
-        "member_id" : 1
+        "member_id" : memberId,
+        "id" : id
     ]
     let headers = [
-        "Authorization" : "Bearer " + ""
+        "Authorization" : "Bearer " + token
     ]
+    let url = "http://3.16.157.244:8090/products/" + String(id) + "/like?member_id=" + String(memberId)
+    Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        switch response.result {
+        case .success:
+            print("success")
+            print("===================")
+        case .failure:
+            print("failure")
+            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
+            print(response)
+        }
+    }
 }
 
+
+// 좋아요 취소
 func unlikeRequest(token: String, memberId: Int, id: Int) {
-    // 좋아요 취소
-    //http://3.16.157.244:8090/products/2/unlike?memberId=1
     let parameters = [
         "memberId:" : memberId,
     ]
     let headers = [
         "Authorization" : "Bearer " + token
     ]
-    
     let url = "http://3.16.157.244:8090/products/" + String(id) + "/unlike?memberId=" + String(memberId)
     Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
         switch response.result {

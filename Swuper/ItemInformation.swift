@@ -20,7 +20,6 @@ struct ItemInformation {
         var limitMemberNumber: Int?
         var spendTime: String?
     }
-    
     struct Flag {
         var firstFlag: Bool?
         var secondFlag: Bool?

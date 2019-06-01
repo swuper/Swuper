@@ -51,8 +51,6 @@ class MyPageViewController: UIViewController {
 
     // MARK:- Function
     @objc func didRecieveUserItemNotification(_ noti: Notification) {
-        count = count + 1
-        print(count)
         guard let response = noti.userInfo?["response"] as? [[String:Any]] else { return }
         print("=================noti===================")
         itemResponse = response

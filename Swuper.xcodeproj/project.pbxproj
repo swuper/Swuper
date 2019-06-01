@@ -14,7 +14,6 @@
 		9907DD9E229F7A1D00746E0C /* ItemInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907DD9D229F7A1D00746E0C /* ItemInfoTableViewCell.swift */; };
 		9907DDA0229F7A3B00746E0C /* ItemDetailInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907DD9F229F7A3B00746E0C /* ItemDetailInfoTableViewCell.swift */; };
 		9907DDA2229F7A5B00746E0C /* OpenKakaoButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9907DDA1229F7A5B00746E0C /* OpenKakaoButtonTableViewCell.swift */; };
-		99090B36229D803000D43446 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99090B35229D803000D43446 /* API.swift */; };
 		99090B3A229D98EB00D43446 /* LikeListTableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99090B39229D98EB00D43446 /* LikeListTableTableViewCell.swift */; };
 		990972C3227AB0D000DAA3D6 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C2227AB0D000DAA3D6 /* HomeView.storyboard */; };
 		990972C5227AB2DB00DAA3D6 /* LikeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */; };
@@ -54,7 +53,6 @@
 		9907DD9D229F7A1D00746E0C /* ItemInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoTableViewCell.swift; sourceTree = "<group>"; };
 		9907DD9F229F7A3B00746E0C /* ItemDetailInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInfoTableViewCell.swift; sourceTree = "<group>"; };
 		9907DDA1229F7A5B00746E0C /* OpenKakaoButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenKakaoButtonTableViewCell.swift; sourceTree = "<group>"; };
-		99090B35229D803000D43446 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		99090B39229D98EB00D43446 /* LikeListTableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableTableViewCell.swift; sourceTree = "<group>"; };
 		990972C2227AB0D000DAA3D6 /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		990972C4227AB2DB00DAA3D6 /* LikeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeView.storyboard; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 				99077FE42290139300E80BA1 /* Helvetica-Bold-Font.ttf */,
 				994C669C229EBAE4009F8812 /* Protocol.swift */,
 				991547E92296804100A9F37C /* ItemInformation.swift */,
-				99090B35229D803000D43446 /* API.swift */,
 				992FB03C2291092100750C51 /* UserInformation.swift */,
 				9993C2C1225DB41200A6B851 /* Main.storyboard */,
 				994C669E229ED32D009F8812 /* ProductDetailPage */,
@@ -387,7 +384,6 @@
 				990972D0227AC13B00DAA3D6 /* ProductDetailViewController.swift in Sources */,
 				990A8C9D2295319700B2A03E /* MyPageTableViewCell.swift in Sources */,
 				9993C2BE225DB41100A6B851 /* AppDelegate.swift in Sources */,
-				99090B36229D803000D43446 /* API.swift in Sources */,
 				9909E7FC227E9D3500219758 /* CategoryCollectionViewCell.swift in Sources */,
 				990972D4227AC1AB00DAA3D6 /* LikeListTableViewController.swift in Sources */,
 				991AE823228C457000E49D3A /* FirstStepViewController.swift in Sources */,

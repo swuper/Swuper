@@ -3,11 +3,14 @@ import Kingfisher
 
 class LikeListTableViewController: UIViewController {
     
+    // Properties
     var itemResponse : [[String : Any]] = []
     let cell = "likecell"
 
+    // IBOulet
     @IBOutlet weak var likeTableView: UITableView!
     
+    // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.likeTableView.separatorStyle = .none
@@ -22,6 +25,7 @@ class LikeListTableViewController: UIViewController {
         }
     }
     
+    // Function
     @objc func didRecieveAllItemNotification(_ noti: Notification) {
         guard let response = noti.userInfo?["response"] as? [[String:Any]] else { return }
         print("=================noti===================")
@@ -35,9 +39,7 @@ class LikeListTableViewController: UIViewController {
         print(itemResponse.count)
         print("=======like==========")
         print(itemResponse)
-        DispatchQueue.main.async {
-            self.likeTableView.reloadData()
-        }
+        self.likeTableView.reloadData()
     }
     
     @objc func didRecieveErrorNotification(_ noti: Notification) {
@@ -46,25 +48,22 @@ class LikeListTableViewController: UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: false, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+     // MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let desVC = segue.destination as? ProductDetailViewController else { return }
+        guard let cell = self.likeTableView.indexPathForSelectedRow else { return }
+        desVC.detailInfo = [itemResponse[cell.row]]
     }
-    */
-
 }
 
+// DataSource
 extension LikeListTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemResponse.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = likeTableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as? LikeListTableTableViewCell else { return UITableViewCell() }
-        cell.delegate = self
         guard let name = itemResponse[indexPath.row]["name"] as? String else { return UITableViewCell() }
         guard let imgURL = itemResponse[indexPath.row]["img"] as? String else { return UITableViewCell() }
         guard let id = itemResponse[indexPath.row]["id"] else { return UITableViewCell() }
@@ -74,16 +73,18 @@ extension LikeListTableViewController: UITableViewDataSource {
         cell.userImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: userImgURL)!, cacheKey: userImgURL))
         cell.itemLabel.text = name
         cell.idLabel.text = String(id as! Int)
+        cell.delegate = self
         return cell
     }
 }
 
+
+// MARK:- Delegate
 extension LikeListTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         self.likeTableView.deselectRow(at: indexPath, animated: false)
     }
 }
-
 
 extension LikeListTableViewController: LikeCellDelegate {
     func likeCell(_ cell: LikeListTableTableViewCell, didTaplikeButton: UIButton) {
@@ -93,7 +94,6 @@ extension LikeListTableViewController: LikeCellDelegate {
         unlikeRequest(token: token, memberId: memberId, id: Int(id)!)
         getAllItemRequest(token: token)
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveAllItemNotification), name: DidRecieveAllItemNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
         DispatchQueue.main.async {
             self.likeTableView.reloadData()
         }

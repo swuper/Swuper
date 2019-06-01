@@ -41,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="45" width="326" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="WZ2-7m-yon"/>
                                         </connections>
@@ -210,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="164" width="316" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
                                         <connections>
                                             <outlet property="delegate" destination="1rM-kJ-hU9" id="vP7-uY-3jc"/>
                                         </connections>
@@ -225,7 +225,7 @@
                                         <rect key="frame" x="0.0" y="232" width="316" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
                                         <connections>
                                             <outlet property="delegate" destination="1rM-kJ-hU9" id="Hmr-zO-n3R"/>
                                         </connections>

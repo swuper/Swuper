@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class ProductDetailViewController: UIViewController {
     
@@ -8,6 +9,7 @@ class ProductDetailViewController: UIViewController {
     let itemInfoSection = 2
     let itemDetailInfoSection = 3
     let OpenKakaoButtonSection = 4
+    var detailInfo: [[String : Any]] = []
 
     // MARK:- IBOulet
     @IBOutlet weak var detailTableView: UITableView!
@@ -16,28 +18,23 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         detailTableView.separatorStyle = .none
-
-        // Do any additional setup after loading the view.
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         print("ProductDetailView")
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification(_:)), name: DidRecieveErrorNotification, object: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // MARK:- Function
+    @objc func didRecieveErrorNotification(_ noti: Notification) {
+        let alertController = UIAlertController(title: "알림", message: "다시 시도해 주세요", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: false, completion: nil)
     }
-    */
-
 }
 
 // MARK:- Delegate
 extension ProductDetailViewController: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
@@ -62,15 +59,37 @@ extension ProductDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == itemImageSection {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as? ItemImageTableViewCell else { return UITableViewCell() }
-            cell.itemImageView.image = UIImage(named: "swuper")
+            guard let imgURL = detailInfo[indexPath.row]["img"] as? String else { return UITableViewCell() }
+            guard let like = detailInfo[indexPath.row]["like"] as? Int else { return UITableViewCell() }
+            guard let itemId = detailInfo[indexPath.row]["id"] as? Int else { return UITableViewCell() }
+            cell.itemImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: imgURL)!, cacheKey: imgURL))
+            cell.itemId.text = String(itemId)
+            if like == 1 {
+                cell.likeButton.setImage(UIImage(named: "likeButton"), for: .normal)
+            } else {
+                cell.likeButton.setImage(UIImage(named: "emptylikeButton"), for: .normal)
+            }
+            cell.delegate = self
             return cell
         } else if indexPath.section == itemTitleSection {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "titlecell", for: indexPath) as? ItemTitleTableViewCell else { return UITableViewCell() }
-            cell.userNameLabel.text = "by 쭈"
+            guard let username = UserInformation.shared.username else { return UITableViewCell() }
+            guard let itemTitle = detailInfo[indexPath.row]["name"] as? String else { return UITableViewCell() }
+            guard let price = detailInfo[indexPath.row]["price"] as? String else { return UITableViewCell() }
+            cell.userNameLabel.text = "by " + username
+            cell.itemTitleLabel.text = itemTitle
+            cell.priceLabel.text = price
             return cell
         } else if indexPath.section == itemInfoSection {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "iteminfocell", for: indexPath) as? ItemInfoTableViewCell else { return UITableViewCell() }
-            cell.placeLabel.text = "50주년 기념관 505호"
+            guard let place = detailInfo[indexPath.row]["place"] as? String else { return UITableViewCell() }
+            guard let startAt = detailInfo[indexPath.row]["startAt"] as? String else { return UITableViewCell() }
+            guard let spendTime = detailInfo[indexPath.row]["spendTime"] as? String else { return UITableViewCell() }
+            guard let limitPeople = detailInfo[indexPath.row]["limitMemberNumber"] as? Int else { return UITableViewCell() }
+            cell.placeLabel.text = place
+            cell.dateLabel.text = startAt
+            cell.useTimeLabel.text = spendTime
+            cell.limitedPeopleLabel.text = String(limitPeople)
             return cell
         } else if indexPath.section == itemDetailInfoSection {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "detailinfocell", for: indexPath) as? ItemDetailInfoTableViewCell else { return UITableViewCell()}
@@ -81,6 +100,25 @@ extension ProductDetailViewController: UITableViewDataSource {
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+}
+
+
+extension ProductDetailViewController: LikeUnLikeButtonDelegate {
+    func likeUnlikeButton(_ cell: ItemImageTableViewCell, didTaplikeButton: UIButton) {
+        guard let token = UserInformation.shared.token else { return }
+        guard let memberId = UserInformation.shared.memberId else { return }
+        guard let id = cell.itemId.text else { return }
+        guard let button = cell.likeButton.imageView?.image else { return }
+        if button == UIImage(named: "likeButton") {
+            // 좋아요 취소
+            unlikeRequest(token: token, memberId: memberId, id: Int(id)!)
+            print("nono")
+        } else {
+            // 좋아요
+            likeRequest(token: token, memberId: memberId, id: Int(id)!)
+            print("yesyes")
         }
     }
 }

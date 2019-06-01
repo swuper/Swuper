@@ -5,14 +5,13 @@ class OpenKakaoButtonTableViewCell: UITableViewCell {
     @IBOutlet weak var openKakaoButton: UIButton!
     
     override func awakeFromNib() {
+        DispatchQueue.main.async {
+            self.openKakaoButton.addTarget(self, action: #selector(self.touchUpOpenkakaoButton(_:)), for: .touchUpInside)
+        }
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @objc func touchUpOpenkakaoButton(_ sender: UIButton) {
+        UIApplication.shared.open (NSURL(string:"https://open.kakao.com/o/swL6xUnb")! as URL)
     }
-
 }
