@@ -8,6 +8,7 @@ class MyPageViewController: UIViewController {
     var itemResponse : [[String : Any]] = []
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var count = 0
+    private var refreshControl = UIRefreshControl()
     
     // MARK:- IBOulet
     @IBOutlet var myPageTableView: UITableView!
@@ -28,10 +29,14 @@ class MyPageViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.gray
         view.addSubview(activityIndicator)
+        myPageTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
         userNameLabel.text = UserInformation.shared.username
         userEmailLabel.text = UserInformation.shared.email
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         print("viewWillAppear")
         guard let token = UserInformation.shared.token else { return }
         guard let memberId = UserInformation.shared.memberId else { return }
@@ -41,12 +46,6 @@ class MyPageViewController: UIViewController {
             self.myPageTableView.reloadData()
         }
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        print("viewDidAppear")
-//        DispatchQueue.main.async {
-//            self.myPageTableView.reloadData()
-//        }
-//    }
 
     // MARK:- Function
     @objc func didRecieveUserItemNotification(_ noti: Notification) {
@@ -68,8 +67,15 @@ class MyPageViewController: UIViewController {
         activityIndicator.stopAnimating()
     }
     
+    @objc func refresh() {
+        guard let token = UserInformation.shared.token else { return }
+        guard let memberId = UserInformation.shared.memberId else { return }
+        userItemRequest(token: token, memberId: memberId)
+        self.myPageTableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+    
     // MARK:- Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let desVC = segue.destination as? ProductDetailViewController else { return }
         guard let selectedRow = self.myPageTableView.indexPathForSelectedRow else { return }

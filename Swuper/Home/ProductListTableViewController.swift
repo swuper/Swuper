@@ -20,7 +20,8 @@ class ProductListTableViewController: UIViewController {
         self.title = category
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCategoryItemNotification), name: DidRecieveCategoryItemNotification, object: nil)
         guard let token = UserInformation.shared.token else { return }
         guard let category = self.category else { return }

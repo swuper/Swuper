@@ -7,7 +7,7 @@ class LikeListTableViewController: UIViewController {
     var itemResponse : [[String : Any]] = []
     let cell = "likecell"
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-
+    private var refreshControl = UIRefreshControl()
     
     // IBOulet
     @IBOutlet weak var likeTableView: UITableView!
@@ -15,18 +15,24 @@ class LikeListTableViewController: UIViewController {
     // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeItemNotification), name: DidRecieveLikeItemNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(unlikeNotification), name: UnlikeNotification, object: nil)
         self.likeTableView.separatorStyle = .none
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.gray
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeItemNotification), name: DidRecieveLikeItemNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
+        likeTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
         
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         guard let token = UserInformation.shared.token else { return }
         self.activityIndicator.startAnimating()
         likeItemRequest(token: token)
+        
         DispatchQueue.main.async {
             self.likeTableView.reloadData()
         }
@@ -51,6 +57,21 @@ class LikeListTableViewController: UIViewController {
         let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         alertController.addAction(okAction)
         present(alertController, animated: false, completion: nil)
+    }
+    
+    @objc func refresh(){
+        guard let token = UserInformation.shared.token else { return }
+        likeItemRequest(token: token)
+        self.likeTableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+    
+    @objc func unlikeNotification() {
+        guard let token = UserInformation.shared.token else { return }
+        likeItemRequest(token: token)
+        self.likeTableView.reloadData()
+        self.refreshControl.endRefreshing()
+
     }
     
      // MARK:- Navigation

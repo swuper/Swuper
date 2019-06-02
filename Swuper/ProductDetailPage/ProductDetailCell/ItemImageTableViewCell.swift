@@ -14,7 +14,6 @@ class ItemImageTableViewCell: UITableViewCell {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeErrorNotification), name: DidRecieveLikeErrorNotification, object: nil)
     }
     
-    
     @objc func didRecieveLikeErrorNotification(_ noti: Notification) {
         guard let response = noti.userInfo?["Error"] else { return }
         print("에러에러에러에러")

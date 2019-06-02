@@ -9,6 +9,8 @@ let DidRecieveLikeErrorNotification: Notification.Name = Notification.Name("DidR
 let DidRecieveAllItemNotification: Notification.Name = Notification.Name("DidRecieveAllItemNotification")
 let DidRecieveCategoryItemNotification: Notification.Name = Notification.Name("DidRecieveCategoryItemNotification")
 let DidRecieveLikeItemNotification: Notification.Name = Notification.Name("DidRecieveLikeNotification")
+let SuccessUploadNotification: Notification.Name = Notification.Name("SuccessUploadNotification")
+let UnlikeNotification: Notification.Name = Notification.Name("UnlikeNotification")
 
 
 
@@ -130,6 +132,8 @@ func itemPost(memberId: Int, category: String, type: String, name: String, price
         case .success(let upload, _, _):
             upload.responseJSON { MultipartFormData in
                 print("post-success")
+                // 업로드 성공 노티
+                NotificationCenter.default.post(name: SuccessUploadNotification, object: nil)
             }
         case .failure(let encodingError):
             print("failure")
@@ -185,8 +189,6 @@ func getAllItemRequest(token: String) {
     }
 }
 
-
-
 func like(item: [[String : Any]]) -> [[String : Any]] {
     var likeResponse: [[String : Any]] = []
     likeResponse.removeAll()
@@ -224,6 +226,7 @@ func likeItemRequest(token: String) {
         }
     }
 }
+
 
 
 
@@ -294,6 +297,7 @@ func unlikeRequest(token: String, memberId: Int, id: Int) {
         case .success:
             print("success")
             print("===================")
+            NotificationCenter.default.post(name: UnlikeNotification, object: nil)
         case .failure:
             print("failure")
             NotificationCenter.default.post(name: DidRecieveLikeErrorNotification, object: nil, userInfo: ["Error" : response])

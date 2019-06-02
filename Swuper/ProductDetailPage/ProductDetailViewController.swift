@@ -20,6 +20,7 @@ class ProductDetailViewController: UIViewController {
         detailTableView.separatorStyle = .none
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         print("ProductDetailView")
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeErrorNotification(_:)), name: DidRecieveLikeErrorNotification, object: nil)
     }
@@ -93,7 +94,8 @@ extension ProductDetailViewController: UITableViewDataSource {
             return cell
         } else if indexPath.section == itemDetailInfoSection {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "detailinfocell", for: indexPath) as? ItemDetailInfoTableViewCell else { return UITableViewCell()}
-            cell.detailInfoLabel.text = "아아아아아아ㅏ아아아ㅏ아아아아ㅏ아아아아ㅏ아아아아ㅏ아아아ㅏ아아아아아아아ㅏ아아아아ㅏ아아아아ㅏ아아아아아"
+            guard let info = detailInfo[indexPath.row]["text"] as? String else { return UITableViewCell() }
+            cell.detailInfoLabel.text = info
             return cell
         } else if indexPath.section == OpenKakaoButtonSection {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "openchatcell", for: indexPath) as? OpenKakaoButtonTableViewCell else { return UITableViewCell() }
