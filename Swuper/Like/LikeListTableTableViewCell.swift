@@ -25,8 +25,8 @@ class LikeListTableTableViewCell: UITableViewCell {
         }
     }
     @objc func touchUpLikeButton(_ sender: UIButton) {
-        sender.setImage(UIImage(named: "emptylikeButton"), for: .normal)
         delegate?.likeCell(self, didTaplikeButton: sender)
+        sender.setImage(UIImage(named: "emptylikeButton"), for: .normal)
         print("likebutton")
     }
 

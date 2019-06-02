@@ -5,8 +5,12 @@ let DidRecieveLoginTokenNotification: Notification.Name = Notification.Name("Did
 let DidRecieveExceptionNotification: Notification.Name = Notification.Name("DidRecieveExeptionNotification")
 let DidRecieveUserItemNotification: Notification.Name = Notification.Name("DidRecieveUserItemNotification")
 let DidRecieveErrorNotification: Notification.Name = Notification.Name("DidRecieveErrorNotification")
+let DidRecieveLikeErrorNotification: Notification.Name = Notification.Name("DidRecieceLikeErrorNotification")
 let DidRecieveAllItemNotification: Notification.Name = Notification.Name("DidRecieveAllItemNotification")
 let DidRecieveCategoryItemNotification: Notification.Name = Notification.Name("DidRecieveCategoryItemNotification")
+let DidRecieveLikeItemNotification: Notification.Name = Notification.Name("DidRecieveLikeNotification")
+
+
 
 // 로그인
 func LoginPost(id: String, password: String) {
@@ -154,7 +158,6 @@ func userItemRequest(token: String, memberId: Int) {
         case .failure:
             print("failure")
             NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
-            print(response)
         }
     }
 }
@@ -182,14 +185,61 @@ func getAllItemRequest(token: String) {
     }
 }
 
+
+
+func like(item: [[String : Any]]) -> [[String : Any]] {
+    var likeResponse: [[String : Any]] = []
+    likeResponse.removeAll()
+    if item.count != 0 {
+        for i in 0...item.count-1 {
+            if item[i]["like"] as? Int == 1 {
+                likeResponse.append(item[i])
+            }
+        }
+    }
+    return likeResponse
+}
+
+// 좋아요 상품 요청
+func likeItemRequest(token: String) {
+    //http://3.16.157.244:8090/products/getAll
+    let headers = [
+        "Authorization" : "Bearer " + token
+    ]
+    let url = "http://3.16.157.244:8090/products/getAll?page=0"
+    Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        switch response.result {
+        case .success:
+            print("success")
+            guard let response = response.result.value as? [String:Any] else { return }
+            guard let res = response["response"] as? [[String: Any]] else { return }
+            print("===================")
+            var likeResponse = like(item: res)
+            print(likeResponse)
+            NotificationCenter.default.post(name: DidRecieveLikeItemNotification, object: nil, userInfo: ["response" : likeResponse])
+        case .failure:
+            print("failure")
+            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
+            print(response)
+        }
+    }
+}
+
+
+
 // 카테고리별 상품 요청
 func getCategoryItemRequest(token: String, category: String){
+    let parameters = [
+        "category" : category,
+        "page" : 0
+        ] as [String : Any]
+    
     let headers = [
         "Authorization" : "Bearer " + token
     ]
     //http://3.16.157.244:8090/products/get/category?category=FLOWER&page=0
     let url = "http://3.16.157.244:8090/products/get/category?category=" + category + "&page=0"
-    Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+    Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
         switch response.result {
         case .success:
             print("success")
@@ -223,7 +273,7 @@ func likeRequest(token: String, memberId: Int, id: Int) {
             print("===================")
         case .failure:
             print("failure")
-            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
+            NotificationCenter.default.post(name: DidRecieveLikeErrorNotification, object: nil, userInfo: ["Error" : response])
             print(response)
         }
     }
@@ -246,7 +296,7 @@ func unlikeRequest(token: String, memberId: Int, id: Int) {
             print("===================")
         case .failure:
             print("failure")
-            NotificationCenter.default.post(name: DidRecieveErrorNotification, object: nil, userInfo: ["Error" : response])
+            NotificationCenter.default.post(name: DidRecieveLikeErrorNotification, object: nil, userInfo: ["Error" : response])
             print(response)
         }
     }

@@ -11,11 +11,11 @@ class ItemImageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.likeButton.addTarget(self, action: #selector(self.touchUpLikeButton(_:)), for: .touchUpInside)
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeErrorNotification), name: DidRecieveLikeErrorNotification, object: nil)
     }
     
     
-    @objc func didRecieveErrorNotification(_ noti: Notification) {
+    @objc func didRecieveLikeErrorNotification(_ noti: Notification) {
         guard let response = noti.userInfo?["Error"] else { return }
         print("에러에러에러에러")
         if likeButton.imageView?.image == UIImage(named: "likeButton") {

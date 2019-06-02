@@ -45,6 +45,10 @@
                                                 </button>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP5-Wu-IOe">
                                                     <rect key="frame" x="20" y="14" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="PsQ-kB-aO6"/>
+                                                        <constraint firstAttribute="width" constant="42" id="iMe-Rm-OhB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -244,19 +248,15 @@
                                             <outlet property="detailInfoLabel" destination="1yH-4v-zWs" id="MSz-UX-JTg"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="openchatcell" rowHeight="90" id="koj-L7-FBd" customClass="OpenKakaoButtonTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="519" width="414" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="openchatcell" rowHeight="138" id="koj-L7-FBd" customClass="OpenKakaoButtonTableViewCell" customModule="Swuper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="519" width="414" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="koj-L7-FBd" id="4cP-Ad-gB9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="koj-L7-FBd" id="4cP-Ad-gB9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="137.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9K-lA-Ybb">
-                                                    <rect key="frame" x="142" y="20" width="130" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="D3b-hq-vAK"/>
-                                                        <constraint firstAttribute="height" constant="45" id="VaC-Nw-xFY"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="199" y="20" width="16" height="112"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" image="openkakao">
                                                         <color key="titleColor" red="0.43355761520000002" green="0.51789671159999995" blue="0.81096178760000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

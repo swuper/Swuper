@@ -18,23 +18,13 @@ class ProductListTableViewController: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         self.title = category
-        guard let token = UserInformation.shared.token else { return }
-        guard let category = self.category else { return }
-        DispatchQueue.main.async {
-            getCategoryItemRequest(token: token, category: category)
-            self.listTableView.reloadData()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCategoryItemNotification), name: DidRecieveCategoryItemNotification, object: nil)
         guard let token = UserInformation.shared.token else { return }
         guard let category = self.category else { return }
-        DispatchQueue.main.async {
-           //Api.shared.ProductGetPage(viewcontroller: self, page: 0)
-            getCategoryItemRequest(token: token, category: category)
-            self.listTableView.reloadData()
-        }
+        getCategoryItemRequest(token: token, category: category)
     }
     
     // MARK:- Function

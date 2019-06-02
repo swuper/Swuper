@@ -18,9 +18,10 @@ class MyPageViewController: UIViewController {
     // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
         self.myPageTableView.separatorStyle = .none
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)]
-        
         guard let imgURL = UserInformation.shared.profileImg else { return }
         self.userImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: imgURL)!, cacheKey: imgURL))
         activityIndicator.center = view.center
@@ -35,19 +36,17 @@ class MyPageViewController: UIViewController {
         guard let token = UserInformation.shared.token else { return }
         guard let memberId = UserInformation.shared.memberId else { return }
         activityIndicator.startAnimating()
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveUserItemNotification), name: DidRecieveUserItemNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
         userItemRequest(token: token, memberId: memberId)
         DispatchQueue.main.async {
             self.myPageTableView.reloadData()
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear")
-        DispatchQueue.main.async {
-            self.myPageTableView.reloadData()
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        print("viewDidAppear")
+//        DispatchQueue.main.async {
+//            self.myPageTableView.reloadData()
+//        }
+//    }
 
     // MARK:- Function
     @objc func didRecieveUserItemNotification(_ noti: Notification) {
@@ -68,15 +67,15 @@ class MyPageViewController: UIViewController {
         present(alertController, animated: false, completion: nil)
         activityIndicator.stopAnimating()
     }
-    /*
-    // MARK: - Navigation
+    
+    // MARK:- Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let desVC = segue.destination as? ProductDetailViewController else { return }
+        guard let selectedRow = self.myPageTableView.indexPathForSelectedRow else { return }
+        desVC.detailInfo = [itemResponse[selectedRow.row]]
     }
-    */
+    
 }
 
 // MARK:- DataSource

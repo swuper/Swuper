@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     // MARK:-LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        PasswordTextField.isSecureTextEntry = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         guard let token = UserInformation.shared.token else { return }

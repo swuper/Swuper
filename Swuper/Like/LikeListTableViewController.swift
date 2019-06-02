@@ -6,7 +6,9 @@ class LikeListTableViewController: UIViewController {
     // Properties
     var itemResponse : [[String : Any]] = []
     let cell = "likecell"
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
+    
     // IBOulet
     @IBOutlet weak var likeTableView: UITableView!
     
@@ -14,35 +16,37 @@ class LikeListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.likeTableView.separatorStyle = .none
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeItemNotification), name: DidRecieveLikeItemNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         guard let token = UserInformation.shared.token else { return }
-        getAllItemRequest(token: token)
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveAllItemNotification), name: DidRecieveAllItemNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
+        self.activityIndicator.startAnimating()
+        likeItemRequest(token: token)
         DispatchQueue.main.async {
             self.likeTableView.reloadData()
         }
     }
     
     // Function
-    @objc func didRecieveAllItemNotification(_ noti: Notification) {
+    @objc func didRecieveLikeItemNotification(_ noti: Notification) {
         guard let response = noti.userInfo?["response"] as? [[String:Any]] else { return }
         print("=================noti===================")
         //print(response)
-        itemResponse.removeAll()
-        for i in 0...response.count-1 {
-            if (response[i]["like"] as? Int == 1) {
-                itemResponse.append(response[i])
-            }
-        }
+        itemResponse = response
         print(itemResponse.count)
         print("=======like==========")
         print(itemResponse)
+        activityIndicator.stopAnimating()
         self.likeTableView.reloadData()
     }
     
     @objc func didRecieveErrorNotification(_ noti: Notification) {
+        activityIndicator.stopAnimating()
         let alertController = UIAlertController(title: "알림", message: "다시 시도해 주세요", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         alertController.addAction(okAction)
@@ -64,6 +68,7 @@ extension LikeListTableViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = likeTableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as? LikeListTableTableViewCell else { return UITableViewCell() }
+        cell.delegate = self
         guard let name = itemResponse[indexPath.row]["name"] as? String else { return UITableViewCell() }
         guard let imgURL = itemResponse[indexPath.row]["img"] as? String else { return UITableViewCell() }
         guard let id = itemResponse[indexPath.row]["id"] else { return UITableViewCell() }
@@ -73,7 +78,7 @@ extension LikeListTableViewController: UITableViewDataSource {
         cell.userImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: userImgURL)!, cacheKey: userImgURL))
         cell.itemLabel.text = name
         cell.idLabel.text = String(id as! Int)
-        cell.delegate = self
+        
         return cell
     }
 }
@@ -92,8 +97,8 @@ extension LikeListTableViewController: LikeCellDelegate {
         guard let memberId = UserInformation.shared.memberId else { return }
         guard let id = cell.idLabel.text else { return }
         unlikeRequest(token: token, memberId: memberId, id: Int(id)!)
-        getAllItemRequest(token: token)
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveAllItemNotification), name: DidRecieveAllItemNotification, object: nil)
+        likeItemRequest(token: token)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeItemNotification), name: DidRecieveLikeItemNotification, object: nil)
         DispatchQueue.main.async {
             self.likeTableView.reloadData()
         }

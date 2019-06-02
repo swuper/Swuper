@@ -19,6 +19,8 @@ class SignUpViewController: UIViewController {
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.gray
+        PasswordField.isSecureTextEntry = true
+        ConfirmPasswordTextField.isSecureTextEntry = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         //activityIndicator.activityIndicatorView.Style = UIActivityIndicatorView.Style.gray

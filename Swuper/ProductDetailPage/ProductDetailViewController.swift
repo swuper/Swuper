@@ -21,11 +21,11 @@ class ProductDetailViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         print("ProductDetailView")
-        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification(_:)), name: DidRecieveErrorNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeErrorNotification(_:)), name: DidRecieveLikeErrorNotification, object: nil)
     }
     
     // MARK:- Function
-    @objc func didRecieveErrorNotification(_ noti: Notification) {
+    @objc func didRecieveLikeErrorNotification(_ noti: Notification) {
         let alertController = UIAlertController(title: "알림", message: "다시 시도해 주세요", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         alertController.addAction(okAction)
@@ -89,7 +89,7 @@ extension ProductDetailViewController: UITableViewDataSource {
             cell.placeLabel.text = place
             cell.dateLabel.text = startAt
             cell.useTimeLabel.text = spendTime
-            cell.limitedPeopleLabel.text = String(limitPeople)
+            cell.limitedPeopleLabel.text = String(limitPeople) + "명"
             return cell
         } else if indexPath.section == itemDetailInfoSection {
             guard let cell = detailTableView.dequeueReusableCell(withIdentifier: "detailinfocell", for: indexPath) as? ItemDetailInfoTableViewCell else { return UITableViewCell()}
