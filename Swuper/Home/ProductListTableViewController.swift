@@ -7,6 +7,7 @@ class ProductListTableViewController: UIViewController {
     let cell = "item"
     var category: String?
     var itemResponse: [[String : Any]] = []
+    private var refreshControl = UIRefreshControl()
     
     // MARK:- IBOulet
     @IBOutlet var listTableView: UITableView!
@@ -23,6 +24,9 @@ class ProductListTableViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCategoryItemNotification), name: DidRecieveCategoryItemNotification, object: nil)
+        listTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
         guard let token = UserInformation.shared.token else { return }
         guard let category = self.category else { return }
         getCategoryItemRequest(token: token, category: category)
@@ -35,6 +39,14 @@ class ProductListTableViewController: UIViewController {
         print("itemResponse")
         print(itemResponse)
         self.listTableView.reloadData()
+    }
+    
+    @objc func refresh() {
+        guard let token = UserInformation.shared.token else { return }
+        guard let memberId = UserInformation.shared.memberId else { return }
+        userItemRequest(token: token, memberId: memberId)
+        self.listTableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     // MARK: - Navigation
