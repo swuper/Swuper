@@ -18,6 +18,8 @@ class LikeListTableViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeItemNotification), name: DidRecieveLikeItemNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveErrorNotification), name: DidRecieveErrorNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(unlikeNotification), name: UnlikeNotification, object: nil)
+         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: (249/255.0), green: (100/255.0), blue: (73/255.0), alpha: 1)]
+        self.title = "Like"
         self.likeTableView.separatorStyle = .none
         activityIndicator.center = view.center
         activityIndicator.hidesWhenStopped = true
@@ -94,10 +96,11 @@ extension LikeListTableViewController: UITableViewDataSource {
         guard let imgURL = itemResponse[indexPath.row]["img"] as? String else { return UITableViewCell() }
         guard let id = itemResponse[indexPath.row]["id"] else { return UITableViewCell() }
         guard let userImgURL = itemResponse[indexPath.row]["memberImg"] as? String else { return UITableViewCell() }
+        guard let price = itemResponse[indexPath.row]["price"] as? String else { return UITableViewCell() }
         cell.likeButton.setImage(UIImage(named: "likeButton"), for: .normal)
         cell.itemImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: imgURL)!, cacheKey: imgURL))
         cell.userImageView.kf.setImage(with: ImageResource(downloadURL: URL(string: userImgURL)!, cacheKey: userImgURL))
-        cell.itemLabel.text = name
+        cell.itemLabel.text = name +  " " + price
         cell.idLabel.text = String(id as! Int)
         
         return cell

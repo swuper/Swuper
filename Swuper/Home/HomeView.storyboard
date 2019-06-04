@@ -178,7 +178,7 @@
                                             <outlet property="itemImage" destination="ckS-tn-z0p" id="1or-4Q-JqU"/>
                                             <outlet property="itemLabel" destination="fob-9R-ai1" id="j4q-qo-I3Y"/>
                                             <outlet property="userImageView" destination="Ggn-GT-aZS" id="nBb-G0-rms"/>
-                                            <segue destination="9NJ-6j-jeF" kind="show" id="04m-5b-BM4"/>
+                                            <segue destination="9NJ-6j-jeF" kind="presentation" id="04m-5b-BM4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

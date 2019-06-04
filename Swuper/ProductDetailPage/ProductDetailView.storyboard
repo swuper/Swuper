@@ -19,20 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YiQ-w1-tyq">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemcell" rowHeight="213" id="59j-vm-3hK" customClass="ItemImageTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="213"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemcell" rowHeight="268" id="59j-vm-3hK" customClass="ItemImageTableViewCell" customModule="Swuper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="268"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="59j-vm-3hK" id="Pb0-jk-hk7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="212.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="267.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ea-EQ-emv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="RqY-Ke-sPC"/>
+                                                        <constraint firstAttribute="height" constant="250" id="RqY-Ke-sPC"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-gx-Maf">
@@ -72,7 +72,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="titlecell" rowHeight="66" id="Ofd-Ax-KJA" customClass="ItemTitleTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="241" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="296" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ofd-Ax-KJA" id="CBv-3t-437">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65.5"/>
@@ -121,7 +121,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="iteminfocell" rowHeight="116" id="d3k-iA-K5b" customClass="ItemInfoTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="307" width="414" height="116"/>
+                                        <rect key="frame" x="0.0" y="362" width="414" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d3k-iA-K5b" id="jTF-or-IdQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115.5"/>
@@ -142,7 +142,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qaq-Mf-5xp">
                                                                     <rect key="frame" x="27" y="0.0" width="357" height="15"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -159,7 +159,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 및 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goC-sc-xJL">
                                                                     <rect key="frame" x="27" y="0.0" width="357" height="15"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -180,7 +180,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소요 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0f-u6-gxt">
                                                                     <rect key="frame" x="27" y="0.0" width="357" height="15"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -197,7 +197,7 @@
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제한 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOc-3f-Mpu">
                                                                     <rect key="frame" x="27" y="0.0" width="357" height="15"/>
-                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -224,7 +224,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailinfocell" rowHeight="96" id="HKl-JM-Uu8" customClass="ItemDetailInfoTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="423" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="478" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HKl-JM-Uu8" id="iEs-Yt-Ysx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="95.5"/>
@@ -232,7 +232,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세 설명" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yH-4v-zWs">
                                                     <rect key="frame" x="20" y="40" width="369" height="45.5"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -249,7 +249,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="openchatcell" rowHeight="138" id="koj-L7-FBd" customClass="OpenKakaoButtonTableViewCell" customModule="Swuper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="519" width="414" height="138"/>
+                                        <rect key="frame" x="0.0" y="574" width="414" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="koj-L7-FBd" id="4cP-Ad-gB9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="137.5"/>
@@ -278,13 +278,22 @@
                                     <outlet property="dataSource" destination="QWS-Ao-qj4" id="eZt-cW-Ss5"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqk-qP-Sha">
+                                <rect key="frame" x="376" y="44" width="30" height="30"/>
+                                <state key="normal" title="닫기"/>
+                                <connections>
+                                    <action selector="touchUpCloseButton:" destination="QWS-Ao-qj4" eventType="touchUpInside" id="kKb-t0-8j1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jqk-qP-Sha" firstAttribute="top" secondItem="2kl-xh-14U" secondAttribute="top" id="07u-s6-O3S"/>
                             <constraint firstItem="2kl-xh-14U" firstAttribute="bottom" secondItem="YiQ-w1-tyq" secondAttribute="bottom" id="Izq-91-PXk"/>
+                            <constraint firstItem="2kl-xh-14U" firstAttribute="trailing" secondItem="jqk-qP-Sha" secondAttribute="trailing" constant="8" id="VK8-ks-Iyy"/>
                             <constraint firstItem="YiQ-w1-tyq" firstAttribute="leading" secondItem="2kl-xh-14U" secondAttribute="leading" id="Zlz-k2-f3v"/>
                             <constraint firstItem="2kl-xh-14U" firstAttribute="trailing" secondItem="YiQ-w1-tyq" secondAttribute="trailing" id="eZd-g4-pkJ"/>
-                            <constraint firstItem="YiQ-w1-tyq" firstAttribute="top" secondItem="2kl-xh-14U" secondAttribute="top" id="vkV-GA-nSl"/>
+                            <constraint firstItem="YiQ-w1-tyq" firstAttribute="top" secondItem="2kl-xh-14U" secondAttribute="top" constant="30" id="vkV-GA-nSl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2kl-xh-14U"/>
                     </view>

@@ -24,6 +24,10 @@ class ProductDetailViewController: UIViewController {
         print("ProductDetailView")
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLikeErrorNotification(_:)), name: DidRecieveLikeErrorNotification, object: nil)
     }
+    // MARK:- IBAction
+    @IBAction func touchUpCloseButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK:- Function
     @objc func didRecieveLikeErrorNotification(_ noti: Notification) {

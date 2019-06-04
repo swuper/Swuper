@@ -115,7 +115,7 @@
                                             <outlet property="cellView" destination="uSf-MP-vKb" id="PlM-Bp-bqx"/>
                                             <outlet property="itemImageView" destination="DZV-zA-U83" id="AzX-gt-cQe"/>
                                             <outlet property="itemTitleLabel" destination="vtg-aL-FNy" id="s0i-fi-3mv"/>
-                                            <segue destination="fT7-UR-MMa" kind="show" id="bPv-Us-fge"/>
+                                            <segue destination="fT7-UR-MMa" kind="presentation" id="bPv-Us-fge"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

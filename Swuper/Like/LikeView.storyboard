@@ -40,7 +40,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZG-hV-FPD">
                                                                     <rect key="frame" x="10" y="10" width="284" height="43"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -109,7 +109,7 @@
                                             <outlet property="itemLabel" destination="IZG-hV-FPD" id="5Md-Q7-X93"/>
                                             <outlet property="likeButton" destination="yrB-cx-1AK" id="WI0-em-Rir"/>
                                             <outlet property="userImageView" destination="zVW-25-t6H" id="gSk-WC-9fo"/>
-                                            <segue destination="M9M-dQ-zpO" kind="show" id="UQN-IF-1u3"/>
+                                            <segue destination="M9M-dQ-zpO" kind="presentation" id="UQN-IF-1u3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
